@@ -1,0 +1,74 @@
+# Run on the deployment host behind a configured HTTPS reverse proxy.
+# Required paths are supplied explicitly; this never reuses local Docker volumes.
+name: kienchung-production
+x-runtime: &runtime
+  image: unihack26-api:rc0
+  env_file:
+    - ${KC_PRODUCTION_ENV_FILE:?Set absolute path to private production env file}
+  environment:
+    APP_ENV: production
+    ALLOW_LOCAL_DEMO_LOGIN: "false"
+    CHAIN_ID: "43113"
+    CHAIN_DEPLOYMENT_PATH: /run/kienchung/fuji.json
+  volumes:
+    - type: bind
+      source: ${KC_FUJI_DEPLOYMENT:?Set absolute path to verified Fuji manifest}
+      target: /run/kienchung/fuji.json
+      read_only: true
+      bind:
+        create_host_path: false
+  read_only: true
+  tmpfs: ["/tmp:size=256m,mode=1777"]
+  security_opt: ["no-new-privileges:true"]
+  cap_drop: ["ALL"]
+services:
+  init:
+    <<: *runtime
+    command: python -m scripts.initialize_deployment
+    healthcheck:
+      disable: true
+  api:
+    <<: *runtime
+    restart: unless-stopped
+    depends_on:
+      init:
+        condition: service_completed_successfully
+  worker:
+    <<: *runtime
+    command: python -m services.worker.runner
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+  outbox:
+    <<: *runtime
+    command: python -m services.worker.outbox
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+  reconciler:
+    <<: *runtime
+    command: python -m services.worker.reconciler
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+  web:
+    image: unihack26-web:rc0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:13000:3000"
+    read_only: true
+    tmpfs: ["/tmp:size=64m,mode=1777", "/app/apps/web/.next/cache:uid=1000,gid=1000,size=64m"]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    depends_on:
+      api:
+        condition: service_healthy

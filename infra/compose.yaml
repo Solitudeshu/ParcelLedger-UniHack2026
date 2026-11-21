@@ -1,0 +1,122 @@
+services:
+  api:
+    restart: unless-stopped
+    build:
+      context: ..
+      dockerfile: infra/api.Dockerfile
+    environment: &api-env
+      APP_ENV: local
+      ALLOW_LOCAL_DEMO_LOGIN: "true"
+      DATABASE_URL: postgresql+psycopg://kienchung:kienchung_local@postgres:5432/kienchung
+      S3_ENDPOINT_URL: http://minio:9000
+      S3_PUBLIC_ENDPOINT_URL: http://127.0.0.1:59000
+      PRESIGNED_UPLOADS_ENABLED: "true"
+      WEB_ORIGIN: http://127.0.0.1:3000
+      CHAIN_ID: "31337"
+      CHAIN_RPC_URL: http://anvil:8545
+      CHAIN_DEPLOYMENT_PATH: artifacts/deployments/local.json
+    working_dir: /app
+    volumes:
+      - ..:/app
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+  worker:
+    restart: unless-stopped
+    build:
+      context: ..
+      dockerfile: infra/api.Dockerfile
+    command: python -m services.worker.runner
+    environment: *api-env
+    working_dir: /app
+    volumes:
+      - ..:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_started
+  outbox:
+    restart: unless-stopped
+    build:
+      context: ..
+      dockerfile: infra/api.Dockerfile
+    command: python -m services.worker.outbox
+    environment: *api-env
+    working_dir: /app
+    volumes:
+      - ..:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+  reconciler:
+    restart: unless-stopped
+    image: infra-api
+    command: python -m services.worker.reconciler
+    environment: *api-env
+    working_dir: /app
+    volumes:
+      - ..:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      anvil:
+        condition: service_started
+  chain-storage-init:
+    image: ghcr.io/foundry-rs/foundry@sha256:043752653d5be351c71709091b3db97c4421c907eb40ea294195e7f532aadf46
+    user: "0:0"
+    entrypoint: ["/bin/sh", "-c"]
+    command: ["mkdir -p /state && chown 1000:1000 /state"]
+    volumes:
+      - chain-data:/state
+  anvil:
+    restart: unless-stopped
+    image: ghcr.io/foundry-rs/foundry@sha256:043752653d5be351c71709091b3db97c4421c907eb40ea294195e7f532aadf46
+    entrypoint: anvil
+    command: --host 0.0.0.0 --chain-id 31337 --silent --state /state/chain.json --state-interval 30 --preserve-historical-states
+    stop_grace_period: 30s
+    depends_on:
+      chain-storage-init:
+        condition: service_completed_successfully
+    ports:
+      - "127.0.0.1:18545:8545"
+    volumes:
+      - chain-data:/state
+  postgres:
+    restart: unless-stopped
+    image: postgres:17@sha256:a426e44bac0b759c95894d68e1a0ac03ecc20b619f498a91aae373bf06d8508d
+    environment:
+      POSTGRES_USER: kienchung
+      POSTGRES_PASSWORD: kienchung_local
+      POSTGRES_DB: kienchung
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kienchung -d kienchung"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  minio:
+    restart: unless-stopped
+    # Local-only development storage; replace with managed S3 for public deployment.
+    image: minio/minio:RELEASE.2024-12-18T13-15-44Z@sha256:1dce27c494a16bae114774f1cec295493f3613142713130c2d22dd5696be6ad3
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: kienchung_local
+      MINIO_ROOT_PASSWORD: kienchung_local_storage
+    ports:
+      - "127.0.0.1:59000:9000"
+      - "127.0.0.1:59001:9001"
+    volumes:
+      - evidence-data:/data
+volumes:
+  postgres-data:
+  evidence-data:
+  chain-data:
+

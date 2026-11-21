@@ -1,0 +1,18 @@
+# Explicit rollback overlay; apply AFTER compose.yaml and compose.ml.yaml.
+# Verify scripts.preserve_ai_baseline first and drain active analysis jobs.
+services:
+  api:
+    environment:
+      SHADOW_RANKER_PATH: .local/backups/ai/legacy-v1-20261115/payload/artifacts/models/reference-ranker
+      SHADOW_CHANGE_PATH: .local/backups/ai/legacy-v1-20261115/payload/artifacts/models/change-head
+    volumes:
+      - ../.local/backups/ai/legacy-v1-20261115/payload/ml:/app/ml:ro
+  worker:
+    image: sha256:0d59f406908a5c51c0d88f3e002586f8348972f0d2026b1000932c198b826397
+    environment:
+      SHADOW_RANKER_PATH: .local/backups/ai/legacy-v1-20261115/payload/artifacts/models/reference-ranker
+      SHADOW_CHANGE_PATH: .local/backups/ai/legacy-v1-20261115/payload/artifacts/models/change-head
+      DINO_CACHE_PATH: .local/backups/ai/legacy-v1-20261115/payload/.local/dino-cache
+    volumes:
+      - ../.local/backups/ai/legacy-v1-20261115/payload/ml:/app/ml:ro
+      - ../.local/backups/ai/legacy-v1-20261115/payload/services/worker:/app/services/worker:ro

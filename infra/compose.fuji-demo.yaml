@@ -1,0 +1,48 @@
+services:
+  api:
+    image: parcelledger-fuji-api:demo
+    environment: &fuji-chain
+      CHAIN_ID: "43113"
+      CHAIN_RPC_URL: https://api.avax-test.network/ext/bc/C/rpc
+      CHAIN_DEPLOYMENT_PATH: artifacts/deployments/fuji.json
+      WEB_ORIGIN: http://127.0.0.1:23000
+      PRESIGNED_UPLOADS_ENABLED: "false"
+    ports: !override
+      - "127.0.0.1:28000:8000"
+  worker:
+    image: parcelledger-fuji-api:demo
+    environment: *fuji-chain
+  outbox:
+    image: parcelledger-fuji-api:demo
+    environment: *fuji-chain
+  reconciler:
+    image: parcelledger-fuji-api:demo
+    environment: *fuji-chain
+    depends_on: !override
+      postgres:
+        condition: service_healthy
+  web:
+    image: parcelledger-fuji-web:demo
+    build:
+      context: ..
+      dockerfile: infra/release-web.Dockerfile
+    ports:
+      - "127.0.0.1:23000:3000"
+    depends_on:
+      - api
+  postgres:
+    ports: !reset []
+  minio:
+    image: kienchung-fuji-demo-minio:2024-12-18
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM scratch
+        ADD --chmod=755 --checksum=sha256:88182336ab5793488f2caad54846056b330f0dcb5c488b60d52434beeebae3ca https://github.com/minio/minio/releases/download/RELEASE.2024-12-18T13-15-44Z/minio.linux-amd64.RELEASE.2024-12-18T13-15-44Z /minio
+        ENTRYPOINT ["/minio"]
+    ports: !reset []
+  anvil:
+    profiles: [anvil]
+  chain-storage-init:
+    profiles: [anvil]

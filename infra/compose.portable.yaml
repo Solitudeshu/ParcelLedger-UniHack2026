@@ -1,0 +1,118 @@
+# Clean-room local installation. Separate project/volumes/ports from compose.yaml.
+# No host source mount, host credentials, real photos, model weights or chain keys.
+name: kienchung-portable
+x-app-env: &app-env
+  APP_ENV: local
+  ALLOW_LOCAL_DEMO_LOGIN: "true"
+  DATABASE_URL: postgresql+psycopg://kc_portable:portable_test_only@postgres:5432/kc_portable
+  STORAGE_BACKEND: s3
+  S3_ENDPOINT_URL: http://minio:9000
+  S3_ACCESS_KEY: kc_portable
+  S3_SECRET_KEY: portable_storage_test_only
+  S3_BUCKET: kc-portable-evidence
+  PRESIGNED_UPLOADS_ENABLED: "false"
+  WEB_ORIGIN: http://127.0.0.1:13000
+  CHAIN_ID: "31337"
+  CHAIN_DEPLOYMENT_PATH: /app/artifacts/deployments/not-deployed.json
+  SHADOW_RANKER_PATH: ""
+  SHADOW_CHANGE_PATH: ""
+services:
+  init:
+    image: unihack26-api:rc0
+    build:
+      context: ..
+      dockerfile: infra/release-api.Dockerfile
+    environment: *app-env
+    command: python -m scripts.bootstrap
+    healthcheck:
+      disable: true
+    depends_on:
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+  api:
+    image: unihack26-api:rc0
+    environment: *app-env
+    read_only: true
+    tmpfs: ["/tmp:size=256m,mode=1777"]
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:18000:8000"
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+  worker:
+    image: unihack26-api:rc0
+    environment: *app-env
+    read_only: true
+    tmpfs: ["/tmp:size=256m,mode=1777"]
+    command: python -m services.worker.runner
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+  outbox:
+    image: unihack26-api:rc0
+    environment: *app-env
+    read_only: true
+    tmpfs: ["/tmp:size=64m,mode=1777"]
+    command: python -m services.worker.outbox
+    restart: unless-stopped
+    healthcheck:
+      disable: true
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+  web:
+    image: unihack26-web:rc0
+    read_only: true
+    tmpfs: ["/tmp:size=64m,mode=1777", "/app/apps/web/.next/cache:uid=1000,gid=1000,size=64m"]
+    build:
+      context: ..
+      dockerfile: infra/release-web.Dockerfile
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:13000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+  postgres:
+    image: postgres:17@sha256:a426e44bac0b759c95894d68e1a0ac03ecc20b619f498a91aae373bf06d8508d
+    environment:
+      POSTGRES_USER: kc_portable
+      POSTGRES_PASSWORD: portable_test_only
+      POSTGRES_DB: kc_portable
+    volumes:
+      - db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kc_portable -d kc_portable"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  minio:
+    image: minio/minio:RELEASE.2024-12-18T13-15-44Z@sha256:1dce27c494a16bae114774f1cec295493f3613142713130c2d22dd5696be6ad3
+    command: server /data
+    environment:
+      MINIO_ROOT_USER: kc_portable
+      MINIO_ROOT_PASSWORD: portable_storage_test_only
+    volumes:
+      - evidence:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:9000/minio/health/live"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+volumes:
+  db:
+  evidence:

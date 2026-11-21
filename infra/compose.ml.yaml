@@ -1,0 +1,15 @@
+# Enable only after scripts.verify_ranker_export passes for the selected bundle.
+services:
+  api:
+    environment:
+      SHADOW_RANKER_PATH: artifacts/models/reference-ranker
+      SHADOW_CHANGE_PATH: artifacts/models/change-head
+  worker:
+    image: unihack26-worker-ml
+    build:
+      context: ..
+      dockerfile: infra/worker-ml.Dockerfile
+    environment:
+      SHADOW_RANKER_PATH: artifacts/models/reference-ranker
+      DINO_CACHE_PATH: .local/dino-cache
+      SHADOW_CHANGE_PATH: artifacts/models/change-head

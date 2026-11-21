@@ -1,0 +1,39 @@
+# Optional local research advisor. Existing primary baseline/DB/chain stay in place.
+services:
+  api:
+    environment:
+      RESEARCH_TRANSFORMER_PATH: artifacts/models/candidates/transformer-v2/c2-final-v1
+  worker:
+    environment:
+      RESEARCH_TRANSFORMER_PATH: artifacts/models/candidates/transformer-v2/c2-final-v1
+      RESEARCH_VISION_URL: http://vision-research:8010
+  vision-research:
+    image: unihack26-research-gpu:roma-v1
+    restart: unless-stopped
+    working_dir: /app
+    command: python -m uvicorn services.vision.server:app --host 0.0.0.0 --port 8010 --workers 1
+    environment:
+      PYTHONDONTWRITEBYTECODE: "1"
+      RESEARCH_TRANSFORMER_PATH: artifacts/models/candidates/transformer-v2/c2-final-v1
+      RESEARCH_VISION_POLICY_PATH: artifacts/models/candidates/transformer-v2/correspondence-policy.json
+      RESEARCH_VISION_TOKEN_FILE: /run/secrets/vision-token
+    read_only: true
+    tmpfs:
+      - /tmp:size=268435456
+    volumes:
+      - ..:/app:ro
+      - ../.local/models/research-gpu:/models:ro
+      - ../.local/vision-token:/run/secrets/vision-token:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8010/health',timeout=3)"]
+      interval: 20s
+      timeout: 5s
+      retries: 5
+      start_period: 90s
