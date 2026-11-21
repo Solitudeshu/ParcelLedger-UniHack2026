@@ -1,0 +1,172 @@
+﻿1
+00:00:00,320 --> 00:00:02,671
+Đây là ParcelLedger.
+
+2
+00:00:02,671 --> 00:00:07,671
+Mình sẽ theo một đơn đèn gốm từ lúc cửa hàng đóng gói đến khi hai bên ký biên bản.
+
+3
+00:00:07,671 --> 00:00:14,735
+Trong màn hình cửa hàng, mình chọn Tạo hồ sơ mới,
+nhập mã đơn, tên hàng và người nhận, rồi mở hồ sơ.
+
+4
+00:00:14,735 --> 00:00:18,691
+Mình chọn ảnh mặt trước của hộp, tải lên và khóa bộ ảnh.
+
+5
+00:00:18,691 --> 00:00:21,701
+Đây là mốc để đối chiếu khi khách nhận hàng.
+
+6
+00:00:21,701 --> 00:00:26,264
+Quay lại danh sách, mình mở mục Chờ ảnh nhận và tìm mã đơn vừa tạo.
+
+7
+00:00:26,264 --> 00:00:29,650
+Cửa hàng biết ngay kiện này đang chờ ai xử lý.
+
+8
+00:00:29,650 --> 00:00:33,193
+Từ hồ sơ, cửa hàng lấy liên kết dành cho khách.
+
+9
+00:00:33,193 --> 00:00:36,591
+Người nhận mở liên kết rồi chọn Tham gia hồ sơ.
+
+10
+00:00:36,591 --> 00:00:42,186
+Ở màn hình người nhận, mình thêm ảnh chụp cùng mặt hộp, kiểm tra ảnh vừa tải và khóa lại.
+
+11
+00:00:42,186 --> 00:00:45,329
+Bây giờ mình bấm Đối chiếu và tạo biên bản.
+
+12
+00:00:45,329 --> 00:00:48,752
+Ứng dụng tìm ảnh cùng mặt kiện trong bộ ảnh lúc gửi.
+
+13
+00:00:48,752 --> 00:00:50,705
+Đây là kết quả.
+
+14
+00:00:50,705 --> 00:00:55,584
+Nhìn hai mặt hộp cạnh nhau, bạn có thể thấy vùng được đánh dấu trên ảnh lúc nhận.
+
+15
+00:00:55,584 --> 00:00:58,400
+Mình mở ảnh gốc để xem kỹ vết móp.
+
+16
+00:00:58,400 --> 00:01:02,853
+Mình mở biên bản, xem nhận xét gắn với ảnh và bổ sung ghi chú.
+
+17
+00:01:02,853 --> 00:01:06,094
+Khi bấm lưu, ứng dụng tạo phiên bản hai.
+
+18
+00:01:06,094 --> 00:01:09,783
+Cửa hàng đọc lại bản mới, nhập họ tên và ký.
+
+19
+00:01:09,783 --> 00:01:12,489
+Chữ ký xuất hiện ở cột bên gửi.
+
+20
+00:01:12,489 --> 00:01:16,603
+Người nhận kiểm tra cùng phiên bản, vẽ chữ ký rồi bấm ký.
+
+21
+00:01:16,603 --> 00:01:19,771
+Giờ cả hai cột đều đã có người xác nhận.
+
+22
+00:01:19,771 --> 00:01:25,147
+Trong mục Lịch sử, cửa hàng xem được thời điểm thêm ảnh, sửa nội dung và ký biên bản.
+
+23
+00:01:25,147 --> 00:01:28,108
+Cuối cùng, mình tải bản PDF.
+
+24
+00:01:28,108 --> 00:01:32,465
+Mã đơn, cặp ảnh và chữ ký của hai bên nằm ngay trên trang đầu.
+
+25
+00:01:33,373 --> 00:01:35,358
+Còn với kiện có ký quỹ thì sao?
+
+26
+00:01:35,358 --> 00:01:37,162
+Mình mở một đơn đèn gốm khác.
+
+27
+00:01:37,162 --> 00:01:41,371
+Riêng kiện này có một hợp đồng giữ mười kcTEST trên Avalanche Fuji.
+
+28
+00:01:42,407 --> 00:01:43,969
+Shop đề xuất trả khách ba.
+
+29
+00:01:43,969 --> 00:01:47,435
+Khi mình nhập số ba, ứng dụng tính ngay phần của shop là bảy.
+
+30
+00:01:47,435 --> 00:01:49,479
+Mình bấm Đề xuất cách chia tiền.
+
+31
+00:01:50,507 --> 00:01:54,387
+Ở vai người gửi, mình kiểm tra lại hai khoản rồi duyệt bằng ví thử của shop.
+
+32
+00:01:54,387 --> 00:01:56,788
+Bây giờ đã có một trong hai chữ ký.
+
+33
+00:01:57,807 --> 00:01:59,448
+Mình chuyển sang vai người nhận.
+
+34
+00:01:59,448 --> 00:02:03,150
+Khách xem cùng phương án, ba cho mình và bảy cho shop, rồi bấm duyệt.
+
+35
+00:02:03,150 --> 00:02:04,911
+Đã đủ hai chữ ký.
+
+36
+00:02:05,940 --> 00:02:08,106
+Shop bấm gửi phương án để phân bổ quỹ.
+
+37
+00:02:08,106 --> 00:02:11,716
+Khi giao dịch được xác nhận, mỗi bên có quyền rút đúng phần của mình.
+
+38
+00:02:12,740 --> 00:02:15,263
+Ở phía người gửi, mình bấm rút bảy kcTEST.
+
+39
+00:02:15,263 --> 00:02:18,326
+Ứng dụng cập nhật số đã rút ngay trong hồ sơ.
+
+40
+00:02:19,340 --> 00:02:20,944
+Đến lượt người nhận rút ba.
+
+41
+00:02:20,944 --> 00:02:24,595
+Hai lần rút cộng lại đúng mười kcTEST, bằng số tiền đã nạp.
+
+42
+00:02:25,607 --> 00:02:28,849
+Đây là giao dịch phân bổ của chính kiện hàng vừa xem.
+
+43
+00:02:28,849 --> 00:02:32,332
+Ai cũng có thể mở Avalanche Explorer để kiểm tra.

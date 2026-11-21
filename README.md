@@ -2,6 +2,10 @@
 
 ParcelLedger helps online shops and their customers document the condition of a parcel before shipping and when it arrives. Both parties can compare the original photos, review visible changes, and sign a shared condition report. For orders with a deposit, they can also use that report to agree on a payout through an escrow contract on Avalanche Fuji.
 
+**[Watch the official demo (2 min 33 sec)](output/demo/ParcelLedger_UniHack_2026_Final.mp4?raw=true)** · [Vietnamese subtitles](output/demo/ParcelLedger_UniHack_2026_Final.vi.srt)
+
+Follow a ceramic lamp shipment from packing photos to a signed report, then see how a funded shipment is settled on Avalanche Fuji.
+
 [Pitch deck](output/pitch/ParcelLedger_UniHack2026.html) · [Sample signed report](output/pdf/Bien_ban_mau_co_chu_ky.pdf) · [Escrow on Avalanche Fuji](#escrow-on-avalanche-fuji) · [Run locally](#run-locally)
 
 ## Built for UniHack 2026

@@ -104,6 +104,10 @@
 !/artifacts/evaluation/fuji-evidence/ui-escrow.png
 !/artifacts/evaluation/fuji-evidence/ui-report.png
 /output/*
+!/output/demo/
+/output/demo/*
+!/output/demo/ParcelLedger_UniHack_2026_Final.mp4
+!/output/demo/ParcelLedger_UniHack_2026_Final.vi.srt
 !/output/pdf/
 !/output/pitch/
 /output/pdf/*
