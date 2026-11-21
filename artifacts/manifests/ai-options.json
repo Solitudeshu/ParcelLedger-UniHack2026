@@ -1,0 +1,559 @@
+{
+  "schema": "kienchung-ai-options-v1",
+  "active": "legacy-v1",
+  "legacy-v1": {
+    "primary": "sift-local-planar-v1",
+    "shadow_ranker": "synthetic-dino-ranker-v1",
+    "shadow_change": "synthetic-change-head-v1",
+    "snapshot": ".local/backups/ai/legacy-v1-20261115",
+    "snapshot_manifest_sha256": "93305cf9cd3c142f1dcc99bb2226346fb39ea1e53672efff9d6f9af61152d889",
+    "rehearsal": "artifacts/restored/legacy-v1-rehearsal",
+    "restore_and_export_parity": "PASS",
+    "real_box_validation": "NOT_RUN"
+  },
+  "transformer-v2": {
+    "status": "PRETRAINING_COMPLETE_FINAL_SELECTION_ASSESSED_NOT_PROMOTED",
+    "configuration": "ml/configs/upgrade-v2.json",
+    "candidate_artifact_root": "artifacts/models/candidates/transformer-v2",
+    "checkpoint_available": true,
+    "observed_client_date": "2026-11-16",
+    "profile": {
+      "status": "COMPLETE_PASS",
+      "reference": "shusolitude/notebook-unihack26-transformer-profile",
+      "version": 1,
+      "sha256": "6051c681a7d9aa35a4f24b7d6a55cc68e422317b428e3c4056e0dbda3388443d"
+    },
+    "experiments": {
+      "c2": {
+        "reference": "shusolitude/notebook-unihack26-transformer-c2-s04",
+        "id": 145261749,
+        "version": 1,
+        "status": "COMPLETE_COLLECTED_VERIFIED",
+        "configuration": "ml/configs/transformer-c2.json",
+        "trainable_parameters": 1776001,
+        "initial_session": {
+          "reference": "shusolitude/notebook-unihack26-transformer-c2",
+          "id": 145135259,
+          "version": 1,
+          "status": "PAUSED_SESSION_BUDGET",
+          "interim_only": true,
+          "selected_epoch": 9,
+          "completed_epochs": 9,
+          "next_sample_offset": 5576,
+          "successful_updates": 11042,
+          "skipped_amp_steps": 5,
+          "trainable_values": 1776001,
+          "best_sha256": "72f7cdd3274cf010b9cd593e949f61d8adc853bece2be33f1aacfec7c78e3c71",
+          "resume_sha256": "5cb200b96411dec285c94ebcdb9d9f6d8fa6e1a38161f7331767df9972d71ab4",
+          "resume_session_2": "SESSION_2_COLLECTED_ARTIFACT_CONTINUITY_PASS",
+          "promotion": "HOLD",
+          "integrity_status": "PASS"
+        },
+        "session": 4,
+        "session_1_progress": {
+          "epochs_completed": 9,
+          "next_sample_offset": 5576,
+          "optimizer_updates": 11042,
+          "selection_loss": 0.01815839660748973
+        },
+        "resume_continuity": "ALL_FOUR_SESSIONS_ARTIFACT_CONTINUITY_PASS",
+        "session_2_progress": {
+          "epochs_completed": 19,
+          "next_sample_offset": 984,
+          "optimizer_updates": 21964,
+          "selection_loss": 0.012780781867012099
+        },
+        "session_2_checkpoint": {
+          "status": "PASS",
+          "completed_epochs": 19,
+          "next_sample_offset": 984,
+          "successful_updates": 21964,
+          "additional_updates_session_2": 10922,
+          "selected_epoch": 17,
+          "selection_loss": 0.012780781867012099,
+          "preserved_history_entries": 119,
+          "current_history_entries": 238,
+          "artifact_sha256": {
+            "source-hashes.json": "861aa479d36b5e5d05cde772611ff8470c055cdedd6e56db3e7949cf29304a2b",
+            "training/best.pt": "e7d125e027e801d37e68ad3bd599c50bc987245bdee691fd483541179035bf27",
+            "training/model-card.json": "8e671cfb12f5597c1eefd409eab912af465c4b8a071e2f6a2fcf70f22d514674",
+            "training/resume.pt": "e5d09ce45c57153c925bb387a39bcd90df6d981c23c68e8f24bb4345b3cc128a",
+            "training/training-log.json": "0102cf6a93fbe0771754e3aba5c2b98d603f80617ab78a847ac849527436431c"
+          }
+        },
+        "status_observed_at": "2026-11-16T08:41:00.989855+00:00",
+        "session_3_progress": {
+          "epochs_completed": 28,
+          "next_sample_offset": 7040,
+          "optimizer_updates": 33067,
+          "selection_loss": 0.011690845831234115
+        },
+        "session_4_progress": {
+          "epochs_completed": 30,
+          "next_sample_offset": 0,
+          "optimizer_updates": 34487,
+          "selection_loss": 0.011690845831234115
+        },
+        "final_checkpoint": {
+          "status": "PASS",
+          "completed_epochs": 30,
+          "selected_epoch": 23,
+          "best_sha256": "bf111cb8248677742e5b1b7026903d03f34a526c9150364b41c23329d79e8a90",
+          "training_seconds": 46043.919970525996
+        },
+        "final_diagnostics": {
+          "reference": "shusolitude/notebook-unihack26-transformer-c2-diagnostics-s04",
+          "id": 145267530,
+          "version": 1,
+          "status": "COMPLETE_ASSESSED",
+          "observed_at": "2026-11-16T08:38:42.063387+00:00",
+          "assessment": "artifacts/evaluation/final-reference-diagnostics.json",
+          "promotion": "HOLD"
+        },
+        "final_selection_summary": {
+          "samples": 1069,
+          "unknown_only": 0,
+          "positive_samples": 524,
+          "negative_samples": 545,
+          "positive_mean_iou": 0.95906112544906,
+          "positive_mean_dice": 0.9780228240211859,
+          "positive_mean_pixel_recall": 0.9787229252062603,
+          "positive_image_flag_rate": 0.9961832061068703,
+          "negative_false_alarm_rate": 0.0,
+          "target_mean_probability": 0.9770681714738598
+        }
+      },
+      "c3": {
+        "reference": "solitudeshu/notebook-unihack26-transformer-c3-s04",
+        "id": 145246381,
+        "version": 1,
+        "status": "COMPLETE_COLLECTED_VERIFIED",
+        "configuration": "ml/configs/transformer-c3.json",
+        "trainable_parameters": 1907073,
+        "initial_session": {
+          "reference": "solitudeshu/notebook-unihack26-transformer-c3",
+          "id": 145135276,
+          "version": 1,
+          "status": "PAUSED_SESSION_BUDGET",
+          "interim_only": true,
+          "selected_epoch": 7,
+          "completed_epochs": 8,
+          "next_sample_offset": 2720,
+          "successful_updates": 9536,
+          "skipped_amp_steps": 4,
+          "trainable_values": 1907073,
+          "best_sha256": "85f3ec928ad9a06e1e3f1055d14229b43a7ada8bc680fc905aa61ff22e8c8d64",
+          "resume_sha256": "882cf616c0c5cb2e3d643cefef758e725680cede0e0e1313ad8c55a1ad2c8d62",
+          "resume_session_2": "SESSION_2_COLLECTED_ARTIFACT_CONTINUITY_PASS",
+          "promotion": "HOLD",
+          "integrity_status": "PASS"
+        },
+        "session": 4,
+        "session_1_progress": {
+          "epochs_completed": 8,
+          "next_sample_offset": 2720,
+          "optimizer_updates": 9536,
+          "selection_loss": 0.020131749164775285
+        },
+        "resume_continuity": "ALL_FOUR_SESSIONS_ARTIFACT_CONTINUITY_PASS",
+        "session_2_progress": {
+          "epochs_completed": 17,
+          "next_sample_offset": 2368,
+          "optimizer_updates": 19837,
+          "selection_loss": 0.01492121385819581
+        },
+        "session_2_checkpoint": {
+          "status": "PASS",
+          "completed_epochs": 17,
+          "next_sample_offset": 2368,
+          "successful_updates": 19837,
+          "additional_updates_session_2": 10301,
+          "selected_epoch": 17,
+          "selection_loss": 0.01492121385819581,
+          "preserved_history_entries": 103,
+          "current_history_entries": 215,
+          "artifact_sha256": {
+            "source-hashes.json": "861aa479d36b5e5d05cde772611ff8470c055cdedd6e56db3e7949cf29304a2b",
+            "training/best.pt": "86749b98d84449044ec671e93b68c3e082b5290a4523059a2f8f949b641d91c5",
+            "training/model-card.json": "a50c4ef2a5aafb2c939f06d16464ef21746f4c545b0a9bd62b5bb70e6f8d5290",
+            "training/resume.pt": "d61df76708bc280409621c68b55491132c88788a991abbd6b4afadf6c6ab3d96",
+            "training/training-log.json": "b8cb30fb6d67b45bc7b42c3b12153cf171c91ac518bd7dff0ec5c32c2ceb63ce"
+          }
+        },
+        "status_observed_at": "2026-11-16T08:41:00.989855+00:00",
+        "session_3_progress": {
+          "epochs_completed": 25,
+          "next_sample_offset": 4848,
+          "optimizer_updates": 29344,
+          "selection_loss": 0.012727785694873952
+        },
+        "session_3_checkpoint": {
+          "status": "PASS",
+          "observed_at": "2026-11-15T19:27:07.445598+00:00",
+          "completed_epochs": 25,
+          "next_sample_offset": 4848,
+          "successful_updates": 29344,
+          "additional_updates_session_3": 9507,
+          "selected_epoch": 25,
+          "selection_loss": 0.012727785694873952,
+          "preserved_history_entries": 215,
+          "current_history_entries": 318,
+          "artifact_sha256": {
+            "source-hashes.json": "861aa479d36b5e5d05cde772611ff8470c055cdedd6e56db3e7949cf29304a2b",
+            "training/best.pt": "740ad85dd829787c069dcb82e827bb577f0ac8e21adb7630494a97b79cde39b5",
+            "training/model-card.json": "a8e8acb328164be1b469dda5ba650b1ccff2b470c9184ad627a015f44342effa",
+            "training/resume.pt": "364a3e026e133ee6ce5ecac219f1dd59ffd2a30bd6a76392354c9a4572f27f04",
+            "training/training-log.json": "52d87bab3ecd5af609f878340272e9e4fd392c921996a615d567857aab665a82"
+          }
+        },
+        "session_4_resume_binding": {
+          "reference": "solitudeshu/notebook-unihack26-transformer-c3-s04",
+          "version": 1,
+          "kernel_id": 145246381,
+          "resume_sha256": "364a3e026e133ee6ce5ecac219f1dd59ffd2a30bd6a76392354c9a4572f27f04",
+          "submitted_notebook_sha256": "46ca34240b3f056c6d100d72fc9e86dc0d84086cadbfca6bfee07a8b98471bd0",
+          "binding_status": "PASS",
+          "execution_continuity": "COLLECTED_ARTIFACT_CONTINUITY_PASS"
+        },
+        "session_4_progress": {
+          "epochs_completed": 30,
+          "next_sample_offset": 0,
+          "optimizer_updates": 34485,
+          "selection_loss": 0.012385066058929733
+        },
+        "final_checkpoint": {
+          "status": "PASS",
+          "completed_epochs": 30,
+          "selected_epoch": 30,
+          "best_sha256": "85fec060a9662bc21acdb76bfc8071a417ffa106e646febca608f240440eeb86",
+          "training_seconds": 51529.994419438
+        },
+        "final_diagnostics": {
+          "reference": "solitudeshu/notebook-unihack26-transformer-c3-diagnostics-s04",
+          "id": 145272212,
+          "version": 1,
+          "status": "COMPLETE_ASSESSED",
+          "observed_at": "2026-11-16T08:38:41.368897+00:00",
+          "assessment": "artifacts/evaluation/final-reference-diagnostics.json",
+          "promotion": "HOLD"
+        },
+        "final_selection_summary": {
+          "samples": 1069,
+          "unknown_only": 0,
+          "positive_samples": 524,
+          "negative_samples": 545,
+          "positive_mean_iou": 0.9587468296203727,
+          "positive_mean_dice": 0.9778265417328896,
+          "positive_mean_pixel_recall": 0.9799761441585823,
+          "positive_image_flag_rate": 0.9942748091603053,
+          "negative_false_alarm_rate": 0.0,
+          "target_mean_probability": 0.9785745813873888
+        }
+      }
+    },
+    "training_data": "Parcel3D official train pixels; synthetic appearance-change masks",
+    "visa_integrated": false,
+    "visa_audit": {
+      "status": "PIXEL_AUDIT_COMPLETE_REVIEW_PENDING",
+      "reference": "solishu/notebook-unihack26-visa-audit",
+      "version": 1,
+      "images": 10821,
+      "official_train": 8659,
+      "official_test": 2162,
+      "manifest_sha256": "fba1c68957b8e79056696b0a1af96acca1b9faddb0ebc77353819cb56c80e730"
+    },
+    "matching": {
+      "adapter": "RoMa Fast preferred research candidate; ALIKED-LightGlue retained",
+      "initial_benchmark": "artifacts/kaggle/matching-benchmark-v1/matching/matching-report.json",
+      "full_selection_reference": "solishu/notebook-unihack26-matching-full-selection",
+      "full_selection_version": 1,
+      "full_selection_status": "COMPLETE",
+      "initial_assessment": "artifacts/evaluation/matching-initial-assessment.json",
+      "operating_point": null,
+      "full_selection_report": "artifacts/kaggle/matching-full-selection-v1/matching/matching-report.json",
+      "full_selection_report_sha256": "5e64860ad9b69bdc437e53c7ec2332527dfb678b141422615e6626e25ad1f111",
+      "full_selection_assessment": "artifacts/evaluation/matching-full-selection-assessment.json",
+      "promotion": "HOLD",
+      "stress": {
+        "reference": "solishu/notebook-unihack26-matching-stress",
+        "id": 145141478,
+        "version": 2,
+        "status": "COMPLETE",
+        "source_lineages": 25,
+        "queries_per_matcher": 250,
+        "previous_version": {
+          "version": 1,
+          "status": "ERROR",
+          "reason": "NEED_FOUR_VIEWS_PER_LINEAGE",
+          "log_collected": true
+        },
+        "group_verified": true,
+        "report": "artifacts/kaggle/matching-stress-v2/stress/stress-report.json",
+        "report_sha256": "40cb08c3b13d8a7b3659227fe55e4ea0bd89f5fa7af2e9f114944f3b18155809"
+      },
+      "roma_profile": {
+        "reference": "solishu/notebook-unihack26-romav2-profile",
+        "id": 145142750,
+        "version": 1,
+        "status": "COMPLETE_PASS",
+        "scope": "PROCEDURAL_FEASIBILITY_ONLY",
+        "group_verified": true,
+        "report": "artifacts/kaggle/roma-profile-v1/roma-profile/profile.json",
+        "report_sha256": "ac07991221e01f2bb8ac75c1f3f0ad3f4f654cbd53669722d3aaa2ffe3f5f366",
+        "measurements": [
+          {
+            "setting": "fast",
+            "lr_size": [
+              512,
+              512
+            ],
+            "hr_size": [
+              null,
+              null
+            ],
+            "bidirectional": false,
+            "first_call_seconds": 6.789718120000032,
+            "sampled_matches": 1600,
+            "synthetic_median_transfer_error_px": 0.12919539213180542,
+            "peak_allocated_bytes": 2595420160,
+            "peak_reserved_bytes": 4483710976,
+            "status": "PASS",
+            "repeated_pair_seconds": [
+              1.3078602459999615,
+              1.3222089270000197
+            ]
+          },
+          {
+            "setting": "precise",
+            "lr_size": [
+              800,
+              800
+            ],
+            "hr_size": [
+              1280,
+              1280
+            ],
+            "bidirectional": true,
+            "first_call_seconds": 7.582520992000013,
+            "sampled_matches": 1600,
+            "synthetic_median_transfer_error_px": 0.13238327205181122,
+            "peak_allocated_bytes": 10431016960,
+            "peak_reserved_bytes": 11228151808,
+            "status": "PASS",
+            "repeated_pair_seconds": [
+              7.541069160999996,
+              7.73336266299998
+            ]
+          }
+        ],
+        "weights_sha256": "1557dec0d21b62366465f7ff4d5fdf228cc695d0582e196ad2b80e05230828b7",
+        "source_revision": "95c9968145c8906b7b59383258e9f73b02853d89",
+        "bf16_native": false,
+        "bf16_emulated": true
+      },
+      "roma_stress": {
+        "fast": {
+          "reference": "solishu/notebook-unihack26-romav2-stress-fast",
+          "id": 145153986,
+          "version": 1,
+          "status": "COMPLETE_ASSESSED",
+          "group_verified": true,
+          "source_lineages": 25,
+          "target_queries": 250,
+          "promotion": "HOLD",
+          "assessment": "artifacts/evaluation/romav2-stress-fast-assessment.json",
+          "summary": {
+            "queries": 250,
+            "true_pair_visible_p95_within_3px": 249,
+            "exact_source_top1_proxy": 250,
+            "p95_query_gallery_seconds": 6.043437945199969
+          }
+        },
+        "precise": {
+          "reference": "solishu/notebook-unihack26-romav2-stress-precise",
+          "id": 145154000,
+          "version": 1,
+          "status": "COMPLETE_ASSESSED",
+          "group_verified": true,
+          "source_lineages": 25,
+          "target_queries": 250,
+          "promotion": "HOLD",
+          "assessment": "artifacts/evaluation/romav2-stress-precise-assessment.json",
+          "summary": {
+            "queries": 250,
+            "true_pair_visible_p95_within_3px": 248,
+            "exact_source_top1_proxy": 250,
+            "p95_query_gallery_seconds": 30.89874189659995
+          }
+        }
+      },
+      "stress_assessor": "ml/assess_matching_stress.py",
+      "preferred_research_matcher": "romav2_fast",
+      "preference_basis": "Synthetic stress geometry and measured cost; no promotion",
+      "negative_assessor": "ml/assess_roma_negatives.py",
+      "negative_selection_summary": {
+        "queries": 250,
+        "wrong_object_accepts_at_legacy_score_50": 24,
+        "operating_point": null,
+        "calibration": "NOT_RUN",
+        "promotion": "HOLD"
+      }
+    },
+    "training_supervisor": {
+      "state": ".local/transformer-supervisor.json",
+      "script": "scripts/supervise_transformer_training.py",
+      "scope": "exact resume C2/C3, then selection diagnostics; never serving promotion",
+      "process_started": true,
+      "gpu_weekly_allowance_seconds_per_account_observed": 108000,
+      "process_status": "EXITED_BOTH_TRAINING_AND_DIAGNOSTICS_DONE"
+    },
+    "real_box_validation": "NOT_RUN",
+    "fallback_overlay": "infra/compose.ai-legacy.yaml",
+    "automatic_promotion": false,
+    "promotion_requires": [
+      "reproducible_checkpoint",
+      "export_parity",
+      "real_end_to_end_comparison",
+      "coverage_and_safety",
+      "dataset_rights"
+    ],
+    "cross_source_audit": {
+      "reference": "solishu/notebook-unihack26-cross-source-audit",
+      "id": 145140448,
+      "version": 1,
+      "status": "COMPLETE_REVIEW_PENDING",
+      "accelerator": "CPU",
+      "group_verified": true,
+      "training_ready": false,
+      "report": "artifacts/kaggle/cross-source-audit-v1/cross-source-audit/audit.json",
+      "report_sha256": "155aac05b7851be934a8b05e9ebf5ad95b898804a2808c37940000a4bfd20eed",
+      "images": 24214,
+      "exact_groups": 0,
+      "near_candidate_pairs": 6169,
+      "metadata_review": "artifacts/evaluation/cross-source-hygiene-review.json"
+    },
+    "research_collector": {
+      "state": ".local/research-collector.json",
+      "scope": "Cross-source audit v1 and matching stress v2 only",
+      "max_seconds": 7200,
+      "no_remote_mutations": true,
+      "process_status": "EXITED_ALL_COLLECTED"
+    },
+    "observed_at": "2026-11-16T08:38:42.067384+00:00",
+    "roma_collector": {
+      "state": ".local/roma-collector.json",
+      "scope": "RoMa fast/precise v1 only",
+      "max_seconds": 18000,
+      "no_remote_mutations": true,
+      "local_assessment_after_collection": true,
+      "assessment_tests": 4,
+      "observer_tests": 5,
+      "process_status": "EXITED_BOTH_ASSESSED"
+    },
+    "final_checkpoint_available": true,
+    "interim_checkpoint_integrity": "artifacts/evaluation/interim-checkpoint-integrity.json",
+    "interim_diagnostics": {
+      "reference": "solishu/notebook-unihack26-transformer-early-diagnostics",
+      "id": 145188702,
+      "version": 1,
+      "status": "COMPLETE_ASSESSED",
+      "group_verified": true,
+      "promotion": "HOLD",
+      "assessor": "ml/assess_interim_diagnostics.py",
+      "automatic_local_assessment": true,
+      "assessment": "artifacts/evaluation/interim-reference-diagnostics.json"
+    },
+    "negative_gallery": {
+      "reference": "solishu/notebook-unihack26-romav2-negative-selection",
+      "id": 145188929,
+      "version": 1,
+      "status": "COMPLETE_ASSESSED",
+      "group_verified": true,
+      "promotion": "HOLD",
+      "automatic_local_assessment": true,
+      "assessment": "artifacts/evaluation/roma-negative-assessment.json"
+    },
+    "local_gpu_profile": {
+      "status": "LOCAL_GPU_SMOKE_AND_INTERIM_PARITY_PASS",
+      "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "report": "artifacts/evaluation/local-gpu-interim-v1/profile.json",
+      "provenance": "artifacts/evaluation/local-gpu-interim-provenance.json",
+      "scope": "ONE_PROCEDURAL_PAIR_INTERIM_CHECKPOINTS",
+      "promotion": "HOLD",
+      "candidates": {
+        "c2": {
+          "repeated_pipeline_seconds": [
+            0.7605494960007491,
+            0.779882902999816,
+            0.7744666160033375
+          ],
+          "peak_allocated_bytes": 3827992576,
+          "peak_reserved_bytes": 4141875200,
+          "reload_parity": "PASS",
+          "reload_probability_max_abs_difference": 0.0,
+          "checkpoint_sha256": "72f7cdd3274cf010b9cd593e949f61d8adc853bece2be33f1aacfec7c78e3c71"
+        },
+        "c3": {
+          "repeated_pipeline_seconds": [
+            0.7806439110026986,
+            0.7604800760018406,
+            0.7728736440003559
+          ],
+          "peak_allocated_bytes": 3826515456,
+          "peak_reserved_bytes": 4120903680,
+          "reload_parity": "PASS",
+          "reload_probability_max_abs_difference": 0.0,
+          "checkpoint_sha256": "85f3ec928ad9a06e1e3f1055d14229b43a7ada8bc680fc905aa61ff22e8c8d64"
+        }
+      }
+    },
+    "research_assessment_tests": {
+      "passed": 14,
+      "artifact": "artifacts/evaluation/research-assessments-tests.xml"
+    },
+    "research_collector_tests": {
+      "passed": 7,
+      "artifact": "artifacts/evaluation/research-collectors-tests.xml"
+    },
+    "session2_continuity": "artifacts/evaluation/session2-checkpoint-continuity.json",
+    "status_evidence": "artifacts/evaluation/research-status-20261116-153842.json",
+    "session3_c3_continuity": "artifacts/evaluation/c3-session3-checkpoint-continuity.json",
+    "final_checkpoint_integrity": "artifacts/evaluation/final-training-integrity.json",
+    "final_selection_diagnostics": "artifacts/evaluation/final-reference-diagnostics.json",
+    "selected_candidate": null,
+    "final_comparison": {
+      "mean": 0.00031429582868719083,
+      "source_objects": 24,
+      "bootstrap_95_percent": [
+        -0.0008904930036619214,
+        0.001341088612915467
+      ]
+    },
+    "local_advisor": {
+      "status": "ENABLED_RESEARCH_ONLY",
+      "candidate": "c2-final-v1",
+      "mode": "SHADOW_ONLY",
+      "primary_promoted": false,
+      "compose_overlay": "infra/compose.research-gpu.yaml",
+      "final_runtime_evidence": "artifacts/evaluation/local-gpu-final-v1/profile.json",
+      "ui_e2e": "artifacts/evaluation/e2e-results.json",
+      "physical_validation": "NOT_RUN",
+      "calibration": "NOT_RUN",
+      "default_reason": "Simpler frozen encoder; no demonstrated C2/C3 winner."
+    },
+    "correspondence_experiments": {
+      "selection": {
+        "reference": "solishu/notebook-unihack26-correspondence-selection",
+        "id": 145361276,
+        "version": 1
+      },
+      "calibration": {
+        "reference": "shusolitude/notebook-unihack26-correspondence-calibration",
+        "id": 145361283,
+        "version": 1
+      },
+      "observer_state": ".local/correspondence-collector.json",
+      "promotion": "HOLD"
+    }
+  }
+}
