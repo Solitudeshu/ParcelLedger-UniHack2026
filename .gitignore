@@ -104,17 +104,10 @@
 !/artifacts/evaluation/fuji-evidence/ui-escrow.png
 !/artifacts/evaluation/fuji-evidence/ui-report.png
 /output/*
-!/output/demo/
 !/output/pdf/
 !/output/pitch/
-/output/demo/*
 /output/pdf/*
 /output/pitch/*
-!/output/demo/KienChung_Avalanche_Fuji_60s.mp4
-!/output/demo/ParcelLedger_UniHack_Demo_truc_tiep.mp4
-!/output/demo/ParcelLedger_UniHack_Demo_truc_tiep.vi.srt
-!/output/demo/ParcelLedger_UniHack_Phan_san_pham.mp4
-!/output/demo/ParcelLedger_UniHack_Phan_san_pham.vi.srt
 !/output/pdf/Bien_ban_mau_co_chu_ky.pdf
 !/output/pitch/ParcelLedger_UniHack2026.html
 /tests/kaggle/
