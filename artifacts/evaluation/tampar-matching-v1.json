@@ -1,0 +1,156 @@
+{
+  "status": "TAMPAR_EXTERNAL_MATCHING_EVALUATION_COMPLETE",
+  "dataset": "https://zenodo.org/records/10057090",
+  "dataset_credit": "TAMPAR by Naumann, Hertlein, Doerr and Furmans (CC BY 4.0)",
+  "image_mirror_commit": "b83b42e4a79f181d31a6f8ab33afdaacf15ca6cf",
+  "official_annotations_sha256": "842112dd62026127b24784fb75d1b0dce0109f975c8142f5c4cf439f3948039c",
+  "sample_manifest_sha256": "88f523408cb4c4a1e20384b43be7f6dfe3fbb65d6b08741bfd7a8f19f64a5f7d",
+  "policy_sha256": "9b8b4dd6125f5e685404a20520fb1a23b052a3a5186535c4959d58de8932aed1",
+  "pair_features_sha256": "0bc5f423fd637fe82650c6bd49e8081cc27e373e7b62082192c1b5f5bdd701ee",
+  "roma_revision": "95c9968145c8906b7b59383258e9f73b02853d89",
+  "roma_weights_sha256": "1557dec0d21b62366465f7ff4d5fdf228cc695d0582e196ad2b80e05230828b7",
+  "policy": {
+    "version": "correspondence-gate-v1",
+    "min_inliers": 24,
+    "min_inlier_ratio": 0.35,
+    "min_coverage": 0.2,
+    "min_valid_fraction": 0.2,
+    "min_texture_tiles": 6,
+    "min_median_ncc": 0.6,
+    "min_agreeing_fraction": 0.5,
+    "tile_ncc": 0.6,
+    "tile_size": 32,
+    "tile_min_std": 6.0,
+    "calibration": "SYNTHETIC_CALIBRATION_V1",
+    "scope": "RESEARCH_ONLY"
+  },
+  "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "source_boxes": 20,
+  "earlier_reference_photos": 20,
+  "later_query_photos": 40,
+  "selection": "Per parcel: base pose medoid; one later table (floor if absent) and one later cubblestone view nearest to the base pose. Four distinct earlier wrong parcels chosen by pose similarity. Uses annotation corners only to fix the sample.",
+  "close_up": "Center crop, 55% of the annotated parcel bounding box dimensions in the later real photo.",
+  "scoring": "One true earlier picture plus three of four distractors, success requires all four mixes. Wrong-only gallery has all four distractors. Ground truth is physical box identity, not a pixel-level alignment label.",
+  "geometry_input": "Aspect-ratio-preserving application resize, full original photographs or the declared crop. No ground-truth keypoints or mask passed to the matcher.",
+  "conditions": {
+    "full_photo": {
+      "counts": {
+        "queries": 40,
+        "positive_accepted": 7,
+        "exact_source_selected": 7,
+        "mixed_wrong_selected": 0,
+        "wrong_gallery_accepted": 0
+      },
+      "bootstrap_95_by_box": {
+        "positive_accepted": [
+          0.05,
+          0.325
+        ],
+        "exact_source_selected": [
+          0.05,
+          0.325
+        ],
+        "mixed_wrong_selected": [
+          0.0,
+          0.0
+        ],
+        "wrong_gallery_accepted": [
+          0.0,
+          0.0
+        ]
+      },
+      "wrong_only_errors": [],
+      "queries_with_detectable_aruco": 40,
+      "queries_with_aruco_in_both_true_pair_images": 40,
+      "true_pair_rejection_reasons": {
+        "INSUFFICIENT_OVERLAP": 24,
+        "APPEARANCE_MISMATCH": 13,
+        "INCONSISTENT_GEOMETRY": 5,
+        "LOW_TEXTURE": 2
+      }
+    },
+    "close_up_crop": {
+      "counts": {
+        "queries": 40,
+        "positive_accepted": 32,
+        "exact_source_selected": 32,
+        "mixed_wrong_selected": 0,
+        "wrong_gallery_accepted": 1
+      },
+      "bootstrap_95_by_box": {
+        "positive_accepted": [
+          0.7,
+          0.9
+        ],
+        "exact_source_selected": [
+          0.7,
+          0.9
+        ],
+        "mixed_wrong_selected": [
+          0.0,
+          0.0
+        ],
+        "wrong_gallery_accepted": [
+          0.0,
+          0.075
+        ]
+      },
+      "wrong_only_errors": [
+        {
+          "query": "id_13_20230523_185246.jpg",
+          "box": "13",
+          "zone": "table",
+          "markers_in_query": [],
+          "wrong_candidates": [
+            {
+              "candidate_source": "id_26_20230523_172231.jpg",
+              "candidate_lineage": "26",
+              "exact_source": false,
+              "features": {
+                "inliers": 588,
+                "inlier_ratio": 0.3675,
+                "coverage": 0.2783108108108108,
+                "valid_fraction": 0.2627750965250965,
+                "texture_tiles": 13,
+                "median_ncc": 0.6959411168274049,
+                "agreeing_fraction": 0.7692307692307693,
+                "query_sharpness": 182.9345703125,
+                "rank_score": 0.134925761384457
+              },
+              "known_source_error": null,
+              "markers": [
+                26
+              ]
+            }
+          ]
+        }
+      ],
+      "queries_with_detectable_aruco": 6,
+      "queries_with_aruco_in_both_true_pair_images": 6,
+      "true_pair_rejection_reasons": {
+        "INCONSISTENT_GEOMETRY": 4,
+        "INSUFFICIENT_OVERLAP": 3,
+        "LOW_TEXTURE": 2,
+        "APPEARANCE_MISMATCH": 6
+      }
+    }
+  },
+  "promotion": "HOLD",
+  "limits": [
+    "TAMPAR is a staged parcel tampering dataset, not an in-use courier pilot or a dent benchmark.",
+    "The close-ups are crops of real photos, not independently captured close-ups.",
+    "One earlier reference and four wrong candidates per query. Pose-based sampling and visual identifiers can affect results."
+  ],
+  "close_up_without_detected_aruco": {
+    "queries": 34,
+    "positive_accepted": 26,
+    "exact_source_selected": 26,
+    "mixed_wrong_selected": 0,
+    "wrong_gallery_accepted": 1
+  },
+  "photo_verification": "All 60 mirror JPEGs match byte lengths and CRC32 from the original Zenodo ZIP. Image SHA-256 values are recorded in the sample manifest.",
+  "workspace_evidence": {
+    "input_manifest": ".local/tampar-eval-v1/manifest.json",
+    "pair_features": ".local/tampar-eval-v1/pair-features.json"
+  }
+}

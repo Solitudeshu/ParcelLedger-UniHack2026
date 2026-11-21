@@ -1,0 +1,29 @@
+{
+  "reference": "shusolitude/notebook-unihack26-correspondence-final-test",
+  "version": 1,
+  "policy_sha256": "9b8b4dd6125f5e685404a20520fb1a23b052a3a5186535c4959d58de8932aed1",
+  "calibration_sha256": "b282d102d4d2fd76cd4b4dc51b7c4a9eba25d55643a8a9bdbbcb1bff2d5833ee",
+  "sources": {
+    "ml/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ml/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ml/features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ml/features/geometry.py": "c08b867e13ca331207029af95a64959bf8bd7ab3cf8ebbad22290a373347b00b",
+    "ml/data/parcel3d_audit.py": "08ddf5f683f5b23c8364228d53f8b3883518465c3e2d66a64bf3ff9888f46b4e",
+    "ml/data/parcel_pairs_v2.py": "26d32013957f1bc2cc281bcf4b8d8a4ba15a702899125313b58b2a5d11f30730",
+    "ml/learned_matching.py": "c62c88c83325e6521ce0476ba55b1e7923ac533593fca7cc08fb0ba27a4a17f4",
+    "ml/evaluate_matching.py": "57fa2ffd083d666efb253b58a2a11ad5422c6bbb92d1013acd4c4564e7ca3a54",
+    "ml/evaluate_matching_stress.py": "d0283a60d7052bce9a87e77c661ad3f05817a4d6fedbee8967a128b616fa91c5",
+    "ml/roma_matching.py": "7da72c037cd4ad9d7177a2cf00f4cb032c64ec90cb58a958bf5fecc2b1f56b0f",
+    "ml/evaluate_roma_stress.py": "d2c5dc0483ab2d71f59c4befb0ca77eff6dc064db9cf29a4235f7c777df7bd20",
+    "ml/evaluate_roma_negatives.py": "6752cb228be013c9a12b04c14190f95240cbba3829e4a23c30d7f19a58c0afd1",
+    "ml/correspondence_gate.py": "f51615137918f0018ccdd970eb0f29ea4ef5653ffd8099a9a066ad2f8d096a0f",
+    "ml/evaluate_correspondence_gate.py": "0de1d1e9ae01f1db6d0ae65a3d86cf0cc3216f3e89e34003554541ce6ed5ccb4"
+  },
+  "files": {
+    "benchmark.ipynb": "1ae27e82dff18f5ec6582ffafa766ab5c8ac0331387cdfa82d0a4d4dbb337836",
+    "kernel-metadata.json": "574a55d6a5c8a3c274be288996da00bb7bd0f2d0ba4972342cf838823a9c531d"
+  },
+  "role": "test",
+  "scope": "SYNTHETIC_ONLY",
+  "promotion": "HOLD"
+}

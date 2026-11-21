@@ -1,0 +1,639 @@
+{
+  "status": "FINAL_SELECTION_DIAGNOSTICS_ASSESSED",
+  "observed_at": "2026-11-16T08:41:00.989855+00:00",
+  "candidates": {
+    "c2": {
+      "modes": {
+        "paired": {
+          "overall": {
+            "samples": 1069,
+            "unknown_only": 0,
+            "positive_samples": 524,
+            "negative_samples": 545,
+            "positive_mean_iou": 0.95906112544906,
+            "positive_mean_dice": 0.9780228240211859,
+            "positive_mean_pixel_recall": 0.9787229252062603,
+            "positive_image_flag_rate": 0.9961832061068703,
+            "negative_false_alarm_rate": 0.0,
+            "target_mean_probability": 0.9770681714738598
+          },
+          "by_scenario": {
+            "0": {
+              "samples": 179,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 179,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "1": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.9244282160511557,
+              "positive_mean_dice": 0.958744084693827,
+              "positive_mean_pixel_recall": 0.964010441423306,
+              "positive_image_flag_rate": 0.9943820224719101,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.960908150070169
+            },
+            "2": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.9812280073407053,
+              "positive_mean_dice": 0.9904669004442894,
+              "positive_mean_pixel_recall": 0.9887892517653937,
+              "positive_image_flag_rate": 1.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.9879591361190496
+            },
+            "3": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "4": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "5": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 168,
+              "negative_samples": 10,
+              "positive_mean_iou": 0.9722691784021199,
+              "positive_mean_dice": 0.985264312098314,
+              "positive_mean_pixel_recall": 0.9836456394076891,
+              "positive_image_flag_rate": 0.9940476190476191,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": 0.9826508625632241
+            }
+          }
+        },
+        "query_as_reference": {
+          "overall": {
+            "samples": 1069,
+            "unknown_only": 0,
+            "positive_samples": 524,
+            "negative_samples": 545,
+            "positive_mean_iou": 0.0,
+            "positive_mean_dice": 0.0,
+            "positive_mean_pixel_recall": 0.0,
+            "positive_image_flag_rate": 0.0,
+            "negative_false_alarm_rate": 0.0,
+            "target_mean_probability": 8.087960225768307e-27
+          },
+          "by_scenario": {
+            "0": {
+              "samples": 179,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 179,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "1": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.0,
+              "positive_mean_dice": 0.0,
+              "positive_mean_pixel_recall": 0.0,
+              "positive_image_flag_rate": 0.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 6.023317734483797e-32
+            },
+            "2": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.0,
+              "positive_mean_dice": 0.0,
+              "positive_mean_pixel_recall": 0.0,
+              "positive_image_flag_rate": 0.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 7.266279953143958e-27
+            },
+            "3": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "4": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "5": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 168,
+              "negative_samples": 10,
+              "positive_mean_iou": 0.0,
+              "positive_mean_dice": 0.0,
+              "positive_mean_pixel_recall": 0.0,
+              "positive_image_flag_rate": 0.0,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": 1.752787264962739e-26
+            }
+          }
+        },
+        "constant_reference": {
+          "overall": {
+            "samples": 1069,
+            "unknown_only": 0,
+            "positive_samples": 524,
+            "negative_samples": 545,
+            "positive_mean_iou": 0.12395076120345853,
+            "positive_mean_dice": 0.1901954590062659,
+            "positive_mean_pixel_recall": 0.5218784181125504,
+            "positive_image_flag_rate": 0.9980916030534351,
+            "negative_false_alarm_rate": 0.9853211009174312,
+            "target_mean_probability": 0.522389329298601
+          },
+          "by_scenario": {
+            "0": {
+              "samples": 179,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 179,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.994413407821229,
+              "target_mean_probability": null
+            },
+            "1": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.040091894367202514,
+              "positive_mean_dice": 0.06308514529076699,
+              "positive_mean_pixel_recall": 0.22850699345514247,
+              "positive_image_flag_rate": 0.9943820224719101,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.2333287672271001
+            },
+            "2": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.15722297180293443,
+              "positive_mean_dice": 0.24492943375504805,
+              "positive_mean_pixel_recall": 0.682744837911491,
+              "positive_image_flag_rate": 1.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.6801591495972839
+            },
+            "3": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 1.0,
+              "target_mean_probability": null
+            },
+            "4": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.9662921348314607,
+              "target_mean_probability": null
+            },
+            "5": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 168,
+              "negative_samples": 10,
+              "positive_mean_iou": 0.17754852793052317,
+              "positive_mean_dice": 0.26687991338766825,
+              "positive_mean_pixel_recall": 0.6622706256411648,
+              "positive_image_flag_rate": 1.0,
+              "negative_false_alarm_rate": 0.9,
+              "target_mean_probability": 0.6614949961769439
+            }
+          }
+        }
+      },
+      "source_objects": 26,
+      "reference_sensitivity": {
+        "positive_samples": 524,
+        "mean_target_probability_drop_when_reference_is_query": 0.9770681714738598,
+        "interpretation": "Diagnostic only; a positive drop supports reference dependence, not physical accuracy."
+      },
+      "reference_probability_drop": {
+        "mean": 0.9770681714738598,
+        "source_objects": 24,
+        "bootstrap_95_percent": [
+          0.9732051664804587,
+          0.981624709817474
+        ]
+      },
+      "query_as_reference_flag_rate_all_usable": {
+        "mean": 0.0,
+        "source_objects": 26,
+        "bootstrap_95_percent": [
+          0.0,
+          0.0
+        ]
+      },
+      "selected_epoch": 23,
+      "checkpoint_sha256": "bf111cb8248677742e5b1b7026903d03f34a526c9150364b41c23329d79e8a90",
+      "positive_cases": 524,
+      "positive_flags": 522,
+      "negative_false_alarms": 0,
+      "query_as_reference_flags": 0,
+      "provenance": {
+        "reference": "shusolitude/notebook-unihack26-transformer-c2-diagnostics-s04",
+        "version": 1,
+        "artifacts": {
+          "diagnostics/selection-predictions.jsonl": "b74b8a7b61f3de2eb62744c81b56528c6807ac88ab6251c66eeef35a993c493b",
+          "diagnostics/selection-report.json": "6109e72e1a76a8c96a06aee2a9d9c51e155f7e243930b1156e9de9e47f461bc3",
+          "source-hashes.json": "02617d7983a0c0aae1665649bfbe71372f3764bb5c38a0f5538c515d17611d5c"
+        }
+      }
+    },
+    "c3": {
+      "modes": {
+        "paired": {
+          "overall": {
+            "samples": 1069,
+            "unknown_only": 0,
+            "positive_samples": 524,
+            "negative_samples": 545,
+            "positive_mean_iou": 0.9587468296203727,
+            "positive_mean_dice": 0.9778265417328896,
+            "positive_mean_pixel_recall": 0.9799761441585823,
+            "positive_image_flag_rate": 0.9942748091603053,
+            "negative_false_alarm_rate": 0.0,
+            "target_mean_probability": 0.9785745813873888
+          },
+          "by_scenario": {
+            "0": {
+              "samples": 179,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 179,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "1": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.9244182438174756,
+              "positive_mean_dice": 0.9588231770847551,
+              "positive_mean_pixel_recall": 0.9657513267247385,
+              "positive_image_flag_rate": 0.9887640449438202,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.9632032784853088
+            },
+            "2": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.9819307057715241,
+              "positive_mean_dice": 0.9908318387829343,
+              "positive_mean_pixel_recall": 0.9902286663328066,
+              "positive_image_flag_rate": 1.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.9893551780266708
+            },
+            "3": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "4": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "5": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 168,
+              "negative_samples": 10,
+              "positive_mean_iou": 0.970554914846627,
+              "positive_mean_dice": 0.9841816371641989,
+              "positive_mean_pixel_recall": 0.9841848855646081,
+              "positive_image_flag_rate": 0.9940476190476191,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": 0.9834385439753532
+            }
+          }
+        },
+        "query_as_reference": {
+          "overall": {
+            "samples": 1069,
+            "unknown_only": 0,
+            "positive_samples": 524,
+            "negative_samples": 545,
+            "positive_mean_iou": 0.0,
+            "positive_mean_dice": 0.0,
+            "positive_mean_pixel_recall": 0.0,
+            "positive_image_flag_rate": 0.0,
+            "negative_false_alarm_rate": 0.0,
+            "target_mean_probability": 3.6055094959544447e-22
+          },
+          "by_scenario": {
+            "0": {
+              "samples": 179,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 179,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "1": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.0,
+              "positive_mean_dice": 0.0,
+              "positive_mean_pixel_recall": 0.0,
+              "positive_image_flag_rate": 0.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 9.53268329826591e-22
+            },
+            "2": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.0,
+              "positive_mean_dice": 0.0,
+              "positive_mean_pixel_recall": 0.0,
+              "positive_image_flag_rate": 0.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 9.143001130207595e-23
+            },
+            "3": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "4": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": null
+            },
+            "5": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 168,
+              "negative_samples": 10,
+              "positive_mean_iou": 0.0,
+              "positive_mean_dice": 0.0,
+              "positive_mean_pixel_recall": 0.0,
+              "positive_image_flag_rate": 0.0,
+              "negative_false_alarm_rate": 0.0,
+              "target_mean_probability": 1.7692814685179703e-23
+            }
+          }
+        },
+        "constant_reference": {
+          "overall": {
+            "samples": 1069,
+            "unknown_only": 0,
+            "positive_samples": 524,
+            "negative_samples": 545,
+            "positive_mean_iou": 0.07729049314961187,
+            "positive_mean_dice": 0.12428875847300483,
+            "positive_mean_pixel_recall": 0.4750909033959693,
+            "positive_image_flag_rate": 1.0,
+            "negative_false_alarm_rate": 0.9963302752293578,
+            "target_mean_probability": 0.4742695487190074
+          },
+          "by_scenario": {
+            "0": {
+              "samples": 179,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 179,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.994413407821229,
+              "target_mean_probability": null
+            },
+            "1": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.021963050940841358,
+              "positive_mean_dice": 0.0330383236727787,
+              "positive_mean_pixel_recall": 0.18852425253836091,
+              "positive_image_flag_rate": 1.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.1897012440917019
+            },
+            "2": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 178,
+              "negative_samples": 0,
+              "positive_mean_iou": 0.10577996710526873,
+              "positive_mean_dice": 0.17239229189545377,
+              "positive_mean_pixel_recall": 0.6263334798805481,
+              "positive_image_flag_rate": 1.0,
+              "negative_false_alarm_rate": null,
+              "target_mean_probability": 0.6248938305894687
+            },
+            "3": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 1.0,
+              "target_mean_probability": null
+            },
+            "4": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 0,
+              "negative_samples": 178,
+              "positive_mean_iou": null,
+              "positive_mean_dice": null,
+              "positive_mean_pixel_recall": null,
+              "positive_image_flag_rate": null,
+              "negative_false_alarm_rate": 0.9943820224719101,
+              "target_mean_probability": null
+            },
+            "5": {
+              "samples": 178,
+              "unknown_only": 0,
+              "positive_samples": 168,
+              "negative_samples": 10,
+              "positive_mean_iou": 0.10572595951302992,
+              "positive_mean_dice": 0.1700039277899354,
+              "positive_mean_pixel_recall": 0.6184699821959649,
+              "positive_image_flag_rate": 1.0,
+              "negative_false_alarm_rate": 1.0,
+              "target_mean_probability": 0.6161864299732827
+            }
+          }
+        }
+      },
+      "source_objects": 26,
+      "reference_sensitivity": {
+        "positive_samples": 524,
+        "mean_target_probability_drop_when_reference_is_query": 0.9785745813873888,
+        "interpretation": "Diagnostic only; a positive drop supports reference dependence, not physical accuracy."
+      },
+      "reference_probability_drop": {
+        "mean": 0.9785745813873888,
+        "source_objects": 24,
+        "bootstrap_95_percent": [
+          0.9753490945704048,
+          0.9825726106072578
+        ]
+      },
+      "query_as_reference_flag_rate_all_usable": {
+        "mean": 0.0,
+        "source_objects": 26,
+        "bootstrap_95_percent": [
+          0.0,
+          0.0
+        ]
+      },
+      "selected_epoch": 30,
+      "checkpoint_sha256": "85fec060a9662bc21acdb76bfc8071a417ffa106e646febca608f240440eeb86",
+      "positive_cases": 524,
+      "positive_flags": 521,
+      "negative_false_alarms": 0,
+      "query_as_reference_flags": 0,
+      "provenance": {
+        "reference": "solitudeshu/notebook-unihack26-transformer-c3-diagnostics-s04",
+        "version": 1,
+        "artifacts": {
+          "diagnostics/selection-predictions.jsonl": "867518d620b561cb0ef49250f0b27dbce97a4ffdfc22de7caaa783644d23a1b0",
+          "diagnostics/selection-report.json": "e504874c2759cc240f578ea0a847927efeb7caf787cf8e05751e80f155a72750",
+          "source-hashes.json": "02617d7983a0c0aae1665649bfbe71372f3764bb5c38a0f5538c515d17611d5c"
+        }
+      }
+    }
+  },
+  "c2_minus_c3_positive_iou": {
+    "mean": 0.00031429582868719083,
+    "source_objects": 24,
+    "bootstrap_95_percent": [
+      -0.0008904930036619214,
+      0.001341088612915467
+    ]
+  },
+  "promotion": "HOLD",
+  "calibration": "NOT_RUN",
+  "test": "NOT_READ",
+  "real_box_validation": "NOT_RUN",
+  "bootstrap_repetitions": 4000,
+  "bootstrap_unit": "source_object",
+  "bootstrap_seed": 26,
+  "limits": [
+    "Synthetic changes on Parcel3D renders with known alignment/foreground; not physical parcel accuracy.",
+    "Selection was also used for checkpoint selection; this is not an independent final-test estimate.",
+    "Diagnostic thresholds are fixed and uncalibrated.",
+    "Query-as-reference targets measure probability drop only; constant reference is out of distribution.",
+    "Does not evaluate upstream image retrieval or end-to-end performance against legacy A.",
+    "Remote report client_date is hardcoded historical metadata; use observed_at for this audit."
+  ]
+}

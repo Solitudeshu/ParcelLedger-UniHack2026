@@ -1,0 +1,15 @@
+{
+  "version": "correspondence-gate-v1",
+  "min_inliers": 24,
+  "min_inlier_ratio": 0.35,
+  "min_coverage": 0.2,
+  "min_valid_fraction": 0.2,
+  "min_texture_tiles": 6,
+  "min_median_ncc": 0.6,
+  "min_agreeing_fraction": 0.5,
+  "tile_ncc": 0.6,
+  "tile_size": 32,
+  "tile_min_std": 6.0,
+  "calibration": "SYNTHETIC_CALIBRATION_V1",
+  "scope": "RESEARCH_ONLY"
+}

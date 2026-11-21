@@ -1,0 +1,97 @@
+{
+  "status": "HELD_OUT_SYNTHETIC_TEST_COMPLETE",
+  "policy_sha256": "9b8b4dd6125f5e685404a20520fb1a23b052a3a5186535c4959d58de8932aed1",
+  "reference": "shusolitude/notebook-unihack26-correspondence-final-test",
+  "version": 1,
+  "source_objects": 19,
+  "source_images": 38,
+  "outputs_sha256": {
+    "gate/report.json": "c135be57bd214724bd17c5622d3c8418965989bb670b48ba7530fa662451527d",
+    "gate/features.json": "00d9ac34c7374f40f46df6b871924469932bf45e35eaf407a38a9ed38b5b897a",
+    "source-hashes.json": "3853ad7fde4549ec185f47676f00b8cd96d4d8436fa626b82e176769935a21f3",
+    "frozen-policy.json": "9b8b4dd6125f5e685404a20520fb1a23b052a3a5186535c4959d58de8932aed1"
+  },
+  "all": {
+    "queries": 228,
+    "positive_accepted": 220,
+    "exact_source_selected": 220,
+    "exact_and_aligned": 218,
+    "mixed_wrong_selected": 0,
+    "wrong_gallery_accepted": 0
+  },
+  "by_scenario": {
+    "planar": {
+      "queries": 38,
+      "positive_accepted": 38,
+      "exact_source_selected": 38,
+      "exact_and_aligned": 38,
+      "mixed_wrong_selected": 0,
+      "wrong_gallery_accepted": 0
+    },
+    "close_up": {
+      "queries": 38,
+      "positive_accepted": 38,
+      "exact_source_selected": 38,
+      "exact_and_aligned": 38,
+      "mixed_wrong_selected": 0,
+      "wrong_gallery_accepted": 0
+    },
+    "blur": {
+      "queries": 38,
+      "positive_accepted": 36,
+      "exact_source_selected": 36,
+      "exact_and_aligned": 36,
+      "mixed_wrong_selected": 0,
+      "wrong_gallery_accepted": 0
+    },
+    "shadow": {
+      "queries": 38,
+      "positive_accepted": 38,
+      "exact_source_selected": 38,
+      "exact_and_aligned": 38,
+      "mixed_wrong_selected": 0,
+      "wrong_gallery_accepted": 0
+    },
+    "occlusion": {
+      "queries": 38,
+      "positive_accepted": 32,
+      "exact_source_selected": 32,
+      "exact_and_aligned": 30,
+      "mixed_wrong_selected": 0,
+      "wrong_gallery_accepted": 0
+    },
+    "added_mark": {
+      "queries": 38,
+      "positive_accepted": 38,
+      "exact_source_selected": 38,
+      "exact_and_aligned": 38,
+      "mixed_wrong_selected": 0,
+      "wrong_gallery_accepted": 0
+    }
+  },
+  "wrong_only_errors": [],
+  "bootstrap_95_by_source_object": {
+    "positive_accepted": [
+      0.9429824561403509,
+      0.9868421052631579
+    ],
+    "exact_source_selected": [
+      0.9429824561403509,
+      0.9868421052631579
+    ],
+    "exact_and_aligned": [
+      0.9254385964912281,
+      0.9824561403508771
+    ],
+    "mixed_wrong_selected": [
+      0.0,
+      0.0
+    ],
+    "wrong_gallery_accepted": [
+      0.0,
+      0.0
+    ]
+  },
+  "promotion": "HOLD",
+  "scope": "SYNTHETIC_ONLY"
+}
