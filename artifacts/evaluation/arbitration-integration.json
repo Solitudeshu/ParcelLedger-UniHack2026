@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "network": "LOCAL_ANVIL",
+  "shipment_id": "a29c4e1b-c6fc-45de-9152-193f2600f7c0",
+  "escrow": "0xd9a40CC679a2814fBcCB7ce190e9Aa451Bd934EF",
+  "api_safe_quorum": true,
+  "one_signature_rejected": true,
+  "duplicate_owner_not_counted": true,
+  "nonowner_rejected": true,
+  "evidence_change_invalidates": true,
+  "fully_withdrawn": true,
+  "shadow_advice": {
+    "mode": "SHADOW_ONLY",
+    "calibration_scope": "SYNTHETIC_ONLY",
+    "real_image_validation": "NOT_RUN",
+    "model_version": "synthetic-dino-ranker-v1",
+    "checkpoint_sha256": "4cba261cc5c80bcadc5e53cf7142555c9931b0b1abd91ae506b47353dd871f43",
+    "changes_product_decision": false,
+    "status": "EVALUATED",
+    "suggested_reference_asset_id": "66b95755-793f-4766-b90c-f448c0a425b4",
+    "synthetic_threshold_accepts": true,
+    "candidates": [
+      {
+        "asset_id": "66b95755-793f-4766-b90c-f448c0a425b4",
+        "ranking_logit": 54.50254440307617,
+        "synthetic_region_score": 1,
+        "synthetic_sufficiency_score": 0.9999878406524658
+      }
+    ],
+    "bundle_sha256": "3ab6b1af42748fd186f2cbe0c278acb91be3afc9cd1dc37bae2a412c69dccb8b"
+  },
+  "transactions": [
+    {
+      "hash": "0x62cc15391095af050508d421649679d2f6b05e9754b97c0691e9e3b130737fa7",
+      "block": "55"
+    },
+    {
+      "hash": "0x89149eedbaeffdd65610199726e71b130a209def6b85613c3097f278ddf71932",
+      "block": "56"
+    },
+    {
+      "hash": "0x31f49130fb6a70139e8a016f88958e1e0b83a1e64abbb0c88ea1df5c6a201f8d",
+      "block": "57"
+    },
+    {
+      "hash": "0x283780875d59c2fc02b976ebbe6c1e538b0f6c96a9105b207bed9363145450d9",
+      "block": "58"
+    },
+    {
+      "hash": "0xd75fbe69cb407cf0c2425aa78792fdb05a16311e17a4fde026632a5c0c2dd019",
+      "block": "59"
+    },
+    {
+      "hash": "0x00f7bb584038b1ec486cb8e928829a1d7c163c6446619742a6f100685e0d68e9",
+      "block": "60"
+    },
+    {
+      "hash": "0x8ebc9f4d697b0d55c5ffa43553b04472f409b21c6dc5429d06086c73cc2afdc5",
+      "block": "61"
+    },
+    {
+      "hash": "0x824daa3be4298e6bdd67468346aafc7b172dc22fc583153cf0e167b40211baaf",
+      "block": "62"
+    },
+    {
+      "hash": "0x8a75b4729dd22ceb79656e8953c38206dbd79ec6fe6a883eebc82de7b2e4ab11",
+      "block": "63"
+    },
+    {
+      "hash": "0x05e119cdbae9617c3e0634b396808f4e21d1a41358ba0ce602ff03e0fe73a161",
+      "block": "64"
+    },
+    {
+      "hash": "0x0602ec063340ffce1cc6ab70d71cb21ebe3e5fe3c3e5664767acb28c3a286c0f",
+      "block": "65"
+    },
+    {
+      "hash": "0x9f69b505525f6b9e12b30dcc328dcf79d3b71368cddaeb641e15ddeeae9ccbe5",
+      "block": "66"
+    }
+  ]
+}

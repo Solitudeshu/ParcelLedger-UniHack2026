@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "network": "AVALANCHE_FUJI",
+  "chain_id": 43113,
+  "shipment_id": "0c998622-3be7-4e25-86ac-23d10315c093",
+  "escrow": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+  "dispute_escrow": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+  "safe": "0x93aA181fcB89B09a185AeA6D0f76A09b2E136e7C",
+  "real_safe_2_of_3_verified": true,
+  "one_signature_rejected": true,
+  "one_signature_revert": "SignatureInvalid",
+  "typed_hash_parity": [
+    "TermsAcceptance",
+    "ReportApproval",
+    "Settlement"
+  ],
+  "offchain_revision_while_signed_rejected": true,
+  "full_reserve_withdrawn": true,
+  "transactions": [
+    {
+      "action": "createCase",
+      "address": "0x7014eb6500e3d7774b3a19424019ea3e035f29c9",
+      "hash": "0x0a23981fe68b0c61de68aaff1352282448e9088f4fa09026865ba835a0f51825",
+      "block": "61421876",
+      "explorer": "https://testnet.snowtrace.io/tx/0x0a23981fe68b0c61de68aaff1352282448e9088f4fa09026865ba835a0f51825"
+    },
+    {
+      "action": "faucet",
+      "address": "0x752892462ebab20bd913e8226525c626931ae389",
+      "hash": "0x9ac2bef57fa6ee1854b321828a9e9fc1493a75af1895595a2676ffbaeca2aad6",
+      "block": "61421879",
+      "explorer": "https://testnet.snowtrace.io/tx/0x9ac2bef57fa6ee1854b321828a9e9fc1493a75af1895595a2676ffbaeca2aad6"
+    },
+    {
+      "action": "approve",
+      "address": "0x752892462ebab20bd913e8226525c626931ae389",
+      "hash": "0x5e1a2a4922e6580e8c6532747cae52908d7d29bf06fa4729fc9f89e1c8168cfb",
+      "block": "61421881",
+      "explorer": "https://testnet.snowtrace.io/tx/0x5e1a2a4922e6580e8c6532747cae52908d7d29bf06fa4729fc9f89e1c8168cfb"
+    },
+    {
+      "action": "fund",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0x83fcf375ef596fcaabf5dc63e40150bf4a3d448644e667b69b39b045ba622b8e",
+      "block": "61421887",
+      "explorer": "https://testnet.snowtrace.io/tx/0x83fcf375ef596fcaabf5dc63e40150bf4a3d448644e667b69b39b045ba622b8e"
+    },
+    {
+      "action": "commitDispatch",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0x000b386b225f3512dd809281b521afbcad14ca4b2b993a4882bf296fcce68dff",
+      "block": "61421891",
+      "explorer": "https://testnet.snowtrace.io/tx/0x000b386b225f3512dd809281b521afbcad14ca4b2b993a4882bf296fcce68dff"
+    },
+    {
+      "action": "activate",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0x1b59e8e1e9eef715f8d3c318f287cf40fb0a88a591ef355ac8f62cf6c60b0151",
+      "block": "61421904",
+      "explorer": "https://testnet.snowtrace.io/tx/0x1b59e8e1e9eef715f8d3c318f287cf40fb0a88a591ef355ac8f62cf6c60b0151"
+    },
+    {
+      "action": "commitReceipt",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0xf96ed81645a91a5fbc2d7390237eb79eaef16e2816d34e55535c22acf957f506",
+      "block": "61421905",
+      "explorer": "https://testnet.snowtrace.io/tx/0xf96ed81645a91a5fbc2d7390237eb79eaef16e2816d34e55535c22acf957f506"
+    },
+    {
+      "action": "acceptReport",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0x32b0e646fe314a8f9dc56d2187619d039174913bb86b2828d40c15fe55395770",
+      "block": "61421942",
+      "explorer": "https://testnet.snowtrace.io/tx/0x32b0e646fe314a8f9dc56d2187619d039174913bb86b2828d40c15fe55395770"
+    },
+    {
+      "action": "settle",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0x791ddea8fa84a8b5a248e07bd7154b12c985d97ac1e58d3ea65287a8fb25edf7",
+      "block": "61421967",
+      "explorer": "https://testnet.snowtrace.io/tx/0x791ddea8fa84a8b5a248e07bd7154b12c985d97ac1e58d3ea65287a8fb25edf7"
+    },
+    {
+      "action": "withdraw",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0x3df46e459ea7866c71e66b0349ec3d127e0dd6a6e5b6d55241695daea92749e1",
+      "block": "61421971",
+      "explorer": "https://testnet.snowtrace.io/tx/0x3df46e459ea7866c71e66b0349ec3d127e0dd6a6e5b6d55241695daea92749e1"
+    },
+    {
+      "action": "withdraw",
+      "address": "0x97dAbFf00BdB800f48C7f290A77a8Add586b922a",
+      "hash": "0xec41279669095da7a35d8d73ec6c780374bca68dcde58d2c021d5a1804a632d7",
+      "block": "61421975",
+      "explorer": "https://testnet.snowtrace.io/tx/0xec41279669095da7a35d8d73ec6c780374bca68dcde58d2c021d5a1804a632d7"
+    },
+    {
+      "action": "createCase",
+      "address": "0x7014eb6500e3d7774b3a19424019ea3e035f29c9",
+      "hash": "0x7a51b6309cf43ad6cbd733e040e0938a57555e4dc4bcb8130e05fd2f4be957b1",
+      "block": "61421983",
+      "explorer": "https://testnet.snowtrace.io/tx/0x7a51b6309cf43ad6cbd733e040e0938a57555e4dc4bcb8130e05fd2f4be957b1"
+    },
+    {
+      "action": "approve",
+      "address": "0x752892462ebab20bd913e8226525c626931ae389",
+      "hash": "0x5596fda531cea351886d03ae336243ec75f302606e8c2f743261ec73181bcbe0",
+      "block": "61421990",
+      "explorer": "https://testnet.snowtrace.io/tx/0x5596fda531cea351886d03ae336243ec75f302606e8c2f743261ec73181bcbe0"
+    },
+    {
+      "action": "fund",
+      "address": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+      "hash": "0xfb2869dd0e9e2321559b96badce254c717ba6f1b3b7581ca9867fd2e989e3e89",
+      "block": "61421996",
+      "explorer": "https://testnet.snowtrace.io/tx/0xfb2869dd0e9e2321559b96badce254c717ba6f1b3b7581ca9867fd2e989e3e89"
+    },
+    {
+      "action": "commitDispatch",
+      "address": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+      "hash": "0xede7ca87f613d114bd3ef352bb54d78c554ef4c1b6077746cfee7bd5e43007e7",
+      "block": "61422000",
+      "explorer": "https://testnet.snowtrace.io/tx/0xede7ca87f613d114bd3ef352bb54d78c554ef4c1b6077746cfee7bd5e43007e7"
+    },
+    {
+      "action": "activate",
+      "address": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+      "hash": "0xd3c3d50a234bd8f651c2f76c0e2ca839c91b633a96a59df74544fd9152e2d499",
+      "block": "61422470",
+      "explorer": "https://testnet.snowtrace.io/tx/0xd3c3d50a234bd8f651c2f76c0e2ca839c91b633a96a59df74544fd9152e2d499"
+    },
+    {
+      "action": "openDispute",
+      "address": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+      "hash": "0x081869c8a2d7041c3ef94ecbb2dea9cf735b4af55fc6dd11ba6bc8cfb8c396d0",
+      "block": "61422474",
+      "explorer": "https://testnet.snowtrace.io/tx/0x081869c8a2d7041c3ef94ecbb2dea9cf735b4af55fc6dd11ba6bc8cfb8c396d0"
+    },
+    {
+      "action": "resolveDispute",
+      "address": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+      "hash": "0xdbf754dfbec2d1a3700b093541573df5e5b6348fab5503c596d338ac0e82b9c0",
+      "block": "61422479",
+      "explorer": "https://testnet.snowtrace.io/tx/0xdbf754dfbec2d1a3700b093541573df5e5b6348fab5503c596d338ac0e82b9c0"
+    },
+    {
+      "action": "withdraw",
+      "address": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+      "hash": "0x51bf1a73a601906c22e8a379e686b041fe0eb9945692559cd3ed5e90c7f28614",
+      "block": "61422485",
+      "explorer": "https://testnet.snowtrace.io/tx/0x51bf1a73a601906c22e8a379e686b041fe0eb9945692559cd3ed5e90c7f28614"
+    },
+    {
+      "action": "withdraw",
+      "address": "0x2e1C7D26a6358d287fFDF36590bf982B96ffb5C1",
+      "hash": "0x166bac22f42bf38797a1bbd7bc7ce69e9f068ce9b550d8134ac10f5506814fb6",
+      "block": "61422493",
+      "explorer": "https://testnet.snowtrace.io/tx/0x166bac22f42bf38797a1bbd7bc7ce69e9f068ce9b550d8134ac10f5506814fb6"
+    }
+  ],
+  "scope": "Test funds, synthetic images, baseline inference and single-operator demo signers."
+}

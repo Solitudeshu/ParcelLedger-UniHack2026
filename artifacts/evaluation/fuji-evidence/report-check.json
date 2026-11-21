@@ -1,0 +1,150 @@
+{
+  "shipment_id": "0c998622-3be7-4e25-86ac-23d10315c093",
+  "reference": "CHAIN-1795258710366",
+  "case_id": "0xd4b41f2661432edbfa21d523274dfea4cd1e72a0daafa70ab2f2a08f221d641d",
+  "escrow": "0x97dabff00bdb800f48c7f290a77a8add586b922a",
+  "version": 1,
+  "canonical_sha256": "afd125ad4ab4602d19961301002e4d45995f8f5a7eb71be46b6b1f2c1d404908",
+  "pdf_file_sha256": "77b30197622200d7121378b55ab0a4a0eb4f1dc091ca00edd0dfffdae6f83c8f",
+  "changed_copy_sha256": "b7160e6265bcede9082148943e8ffb10e42a2af37473425c5759e2ac98228758",
+  "chain": {
+    "address": "0x97dabff00bdb800f48c7f290a77a8add586b922a",
+    "block_number": 61422485,
+    "block_hash": "0xbf6a2111e85d5607cb2e503fa7dcb9c9198d3fa4d378989b74e0195e4ba39f41",
+    "chain_timestamp": 1795259807,
+    "terms": {
+      "caseId": "0xd4b41f2661432edbfa21d523274dfea4cd1e72a0daafa70ab2f2a08f221d641d",
+      "merchant": "0xd6e46c99dc88350aafaef8dcdabb2ae3d67c60c6",
+      "buyer": "0x95e55987af682235caf297aa441edbe369238ef1",
+      "token": "0x752892462ebab20bd913e8226525c626931ae389",
+      "reserveAmount": "10000000",
+      "acceptBy": "1795345108",
+      "reviewDeadline": "1795863508",
+      "arbitrationSafe": "0x93aa181fcb89b09a185aea6d0f76a09b2e136e7c",
+      "termsHash": "0xac3d516d569222ac46d4800f89da016daf888054039199454804214bd63689af"
+    },
+    "state": "4",
+    "evidenceSequence": "2",
+    "acceptedReportVersion": "1",
+    "reportNonce": "3",
+    "settlementNonce": "4",
+    "disputeNonce": "2",
+    "totalFunded": "10000000",
+    "totalWithdrawn": "10000000",
+    "unallocated": "0",
+    "dispatchHash": "0x6dd8c3a4c5ff7eba9fa0f324788e6b6534b15885579edc871ee74e65c476f2f9",
+    "receiptHash": "0xf59de039c5f7ecddb07328f51cd67ff80e21a613009d469edff5f53c8d4ebfdd",
+    "evidenceRoot": "0x9a9c8ce7f9adc666f3530465ff8313440ff9ea22b81acbe310eb588c8a3f9103",
+    "acceptedReportHash": "0xafd125ad4ab4602d19961301002e4d45995f8f5a7eb71be46b6b1f2c1d404908",
+    "merchantClaimable": "0",
+    "buyerClaimable": "0",
+    "tokenBalance": "0",
+    "accounting_consistent": true
+  },
+  "events": [
+    {
+      "id": "ec5cd530-cc4e-42e0-8691-95642192cd45",
+      "kind": "Funded",
+      "arguments": {
+        "payer": "0xd6e46c99dc88350aafaef8dcdabb2ae3d67c60c6",
+        "amount": "10000000"
+      },
+      "block_number": 61421887,
+      "transaction_hash": "0x83fcf375ef596fcaabf5dc63e40150bf4a3d448644e667b69b39b045ba622b8e",
+      "canonical": true
+    },
+    {
+      "id": "a19b760b-299d-4224-8e4b-c72ed9fbc74c",
+      "kind": "EvidenceCommitted",
+      "arguments": {
+        "stage": "0",
+        "manifestHash": "0x6dd8c3a4c5ff7eba9fa0f324788e6b6534b15885579edc871ee74e65c476f2f9",
+        "evidenceRoot": "0xbe9fa1eb00e39b4f59a4a2fc52e67f6d547f315b0598d07684063e3ea13f0bc5",
+        "sequence": "1",
+        "actor": "0xd6e46c99dc88350aafaef8dcdabb2ae3d67c60c6"
+      },
+      "block_number": 61421891,
+      "transaction_hash": "0x000b386b225f3512dd809281b521afbcad14ca4b2b993a4882bf296fcce68dff",
+      "canonical": true
+    },
+    {
+      "id": "a02460d6-0189-41f6-b9e6-ddd1d4323356",
+      "kind": "Activated",
+      "arguments": {
+        "termsHash": "0xac3d516d569222ac46d4800f89da016daf888054039199454804214bd63689af"
+      },
+      "block_number": 61421904,
+      "transaction_hash": "0x1b59e8e1e9eef715f8d3c318f287cf40fb0a88a591ef355ac8f62cf6c60b0151",
+      "canonical": true
+    },
+    {
+      "id": "6ce3c331-ad7b-4349-a884-d87b2da5b054",
+      "kind": "EvidenceCommitted",
+      "arguments": {
+        "stage": "1",
+        "manifestHash": "0xf59de039c5f7ecddb07328f51cd67ff80e21a613009d469edff5f53c8d4ebfdd",
+        "evidenceRoot": "0x9a9c8ce7f9adc666f3530465ff8313440ff9ea22b81acbe310eb588c8a3f9103",
+        "sequence": "2",
+        "actor": "0x95e55987af682235caf297aa441edbe369238ef1"
+      },
+      "block_number": 61421905,
+      "transaction_hash": "0xf96ed81645a91a5fbc2d7390237eb79eaef16e2816d34e55535c22acf957f506",
+      "canonical": true
+    },
+    {
+      "id": "a3474d4d-7eb9-4a26-8a9e-60edc90d43ea",
+      "kind": "ReportAccepted",
+      "arguments": {
+        "reportHash": "0xafd125ad4ab4602d19961301002e4d45995f8f5a7eb71be46b6b1f2c1d404908",
+        "version": "1",
+        "evidenceRoot": "0x9a9c8ce7f9adc666f3530465ff8313440ff9ea22b81acbe310eb588c8a3f9103",
+        "nonce": "2"
+      },
+      "block_number": 61421942,
+      "transaction_hash": "0x32b0e646fe314a8f9dc56d2187619d039174913bb86b2828d40c15fe55395770",
+      "canonical": true
+    },
+    {
+      "id": "fbe5805f-9dd8-4cc4-8b45-9a28331399fe",
+      "kind": "Resolved",
+      "arguments": {
+        "merchantAmount": "7000000",
+        "buyerAmount": "3000000",
+        "commitment": "0xafd125ad4ab4602d19961301002e4d45995f8f5a7eb71be46b6b1f2c1d404908",
+        "arbitrated": false
+      },
+      "block_number": 61421967,
+      "transaction_hash": "0x791ddea8fa84a8b5a248e07bd7154b12c985d97ac1e58d3ea65287a8fb25edf7",
+      "canonical": true
+    },
+    {
+      "id": "f50d3576-2f13-4afa-96b7-1cc178b1ce32",
+      "kind": "Withdrawn",
+      "arguments": {
+        "beneficiary": "0x95e55987af682235caf297aa441edbe369238ef1",
+        "amount": "3000000"
+      },
+      "block_number": 61421971,
+      "transaction_hash": "0x3df46e459ea7866c71e66b0349ec3d127e0dd6a6e5b6d55241695daea92749e1",
+      "canonical": true
+    },
+    {
+      "id": "2681b8c1-ce0c-4951-988d-1b414e4c57bd",
+      "kind": "Withdrawn",
+      "arguments": {
+        "beneficiary": "0xd6e46c99dc88350aafaef8dcdabb2ae3d67c60c6",
+        "amount": "7000000"
+      },
+      "block_number": 61421975,
+      "transaction_hash": "0xec41279669095da7a35d8d73ec6c780374bca68dcde58d2c021d5a1804a632d7",
+      "canonical": true
+    }
+  ],
+  "api_rpc_events_matched": 8,
+  "pdf_hash_text_verified": true,
+  "report_accepted": {
+    "hash": "0x32b0e646fe314a8f9dc56d2187619d039174913bb86b2828d40c15fe55395770",
+    "block": "61421942",
+    "report_hash": "0xafd125ad4ab4602d19961301002e4d45995f8f5a7eb71be46b6b1f2c1d404908"
+  }
+}

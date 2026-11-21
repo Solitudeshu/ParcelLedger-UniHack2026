@@ -1,0 +1,73 @@
+{
+  "status": "DEPLOYED",
+  "network": "fuji",
+  "chain_id": 43113,
+  "rpc_url": "https://api.avax-test.network/ext/bc/C/rpc",
+  "start_block": "61421158",
+  "deployer": "0x6D623107B805075e34196f12A03b9C470bfaAE5b",
+  "contracts": {
+    "DemoToken": "0x752892462ebab20bd913e8226525c626931ae389",
+    "EscrowFactory": "0x7014eb6500e3d7774b3a19424019ea3e035f29c9",
+    "SafeSingleton": "0xfa632c72a265f18ac50a486c84c7ce5eb22bb0ab",
+    "SafeFallbackHandler": "0x33f1b07e423836f13fab7553d633e7634f763850",
+    "SafeProxyFactory": "0x125e669d02b45d1dae7cc0172087efef7eaf4e0c",
+    "ArbitrationSafe": "0x93aA181fcB89B09a185AeA6D0f76A09b2E136e7C"
+  },
+  "transactions": [
+    {
+      "action": "deploy:DemoToken",
+      "hash": "0xaf3e600357d4742cb07aee3b7272d4b4dd1f3c550da041f074077601a3ca4338",
+      "block": "61421164"
+    },
+    {
+      "action": "deploy:EscrowFactory",
+      "hash": "0x495be0751433ed6ae2fef891ffaa6b9d29c5eed420f54c4c03b02072043858cc",
+      "block": "61421166"
+    },
+    {
+      "action": "deploy:SafeSingleton",
+      "hash": "0x78cbfea87f997198d94df8d4b19339a61eca5f57274098f4d819421f5b048d93",
+      "block": "61421170"
+    },
+    {
+      "action": "deploy:SafeFallbackHandler",
+      "hash": "0xd078b9b886855cae22353f9f15ba5375ed6c9a5b10d61c78b9d82735bebdcb17",
+      "block": "61421173"
+    },
+    {
+      "action": "deploy:SafeProxyFactory",
+      "hash": "0x59f1442d91dc433251857920d4063f65616fba78be78b57445a77d1eb5b585c5",
+      "block": "61421177"
+    },
+    {
+      "action": "create:ArbitrationSafe",
+      "hash": "0x8412e861ea197c676b1f4563eb5d4a159aa9579e38702193f513c059e1b4f592",
+      "block": "61421179"
+    },
+    {
+      "action": "allow:token",
+      "hash": "0x2de2d42e665d8e39912e8bdcf1356bd3be20c55fe0942f3fe4002b4e8e3885c2",
+      "block": "61421185"
+    },
+    {
+      "action": "allow:arbitrator",
+      "hash": "0x4c78c55ef78b62fb2b5822ecfc7eb0b6ca2e3257a3366cb9108b2af7cc2b2226",
+      "block": "61421189"
+    }
+  ],
+  "bytecode_hashes": {
+    "DemoToken": "de5e0daaa852762eca973c4b5a7e112ef1ada82b5c916d3dfd5aa2dd3835431c",
+    "EscrowFactory": "afacf0aae630156c33570eab76aa0e19c0d765f191812520e99b66be8ddfeeb8",
+    "SafeSingleton": "242d72c78ff2e01c64d37f7061b013ed9a20c1244113c727f37ee3036b9467ea",
+    "SafeFallbackHandler": "bb1185b536558f9f91443c74c870cd09509822c19339a2441194e942e0021edc",
+    "SafeProxyFactory": "f410858f52bc20cbdf2b26b176518cd756d2f9a6c4ecbc253fbafbc610ae1b28"
+  },
+  "safe_owners": [
+    "0x95b2984FA129C875f0CA45487028Fd85AD704666",
+    "0x9004bc84e0B0833fE974B44229ecACb6870D85AC",
+    "0x0890e1AE576c1Adcd7419dEb50E1Dc220721f3a4"
+  ],
+  "safe_threshold": 2,
+  "custody_scope": "Demonstration keys controlled by one local operator; not independent production arbitration.",
+  "safe_configuration_verified": true
+}
