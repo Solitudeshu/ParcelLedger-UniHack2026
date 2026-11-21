@@ -1,0 +1,51 @@
+[
+  {
+    "name": "vietnamese_nfc",
+    "document": {
+      "title": "Kiện chứng",
+      "a": null
+    },
+    "canonical": "{\"a\":null,\"title\":\"Kiện chứng\"}",
+    "sha256": "23000b8b97fbe7c22eb625f15d9b863dccce44286831fcc4be23a3e709f27584"
+  },
+  {
+    "name": "money_and_escape",
+    "document": {
+      "z": "line\nquote\"",
+      "money": "999999999999999999999999",
+      "n": -12
+    },
+    "canonical": "{\"money\":\"999999999999999999999999\",\"n\":-12,\"z\":\"line\\nquote\\\"\"}",
+    "sha256": "d3110255fb86baf38c240e77cfb7e58a5ffeb92a22b5bf9cf7a20e6f282248c4"
+  },
+  {
+    "name": "report_revision",
+    "document": {
+      "version": 2,
+      "parent_hash": "abababababababababababababababababababababababababababababababab",
+      "observations": [],
+      "approved": false
+    },
+    "canonical": "{\"approved\":false,\"observations\":[],\"parent_hash\":\"abababababababababababababababababababababababababababababababab\",\"version\":2}",
+    "sha256": "4b20bc39992752993fe0aa61e179b42ba481ab992838621dcb06c86140d30507"
+  },
+  {
+    "name": "ecmascript_number",
+    "document": {
+      "tiny": 1e-07,
+      "minus_zero": -0.0,
+      "decimal": 4.5
+    },
+    "canonical": "{\"decimal\":4.5,\"minus_zero\":0,\"tiny\":1e-7}",
+    "sha256": "d94c55ddc18a95f724083d858d95de330efc7d5718dbd5711f27b82a5a5d441c"
+  },
+  {
+    "name": "utf16_key_order",
+    "document": {
+      "￿": 2,
+      "😀": 1
+    },
+    "canonical": "{\"😀\":1,\"￿\":2}",
+    "sha256": "c6b1b96b618d8be475f379fe69c6646b44d7a5d3c01630c43509562f09d1024b"
+  }
+]
