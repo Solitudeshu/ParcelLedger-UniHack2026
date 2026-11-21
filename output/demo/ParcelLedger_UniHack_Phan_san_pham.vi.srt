@@ -1,0 +1,100 @@
+﻿1
+00:00:00,450 --> 00:00:03,068
+Một cửa hàng gửi đi chiếc đèn gốm.
+
+2
+00:00:03,068 --> 00:00:06,248
+Đến nơi, khách báo mặt thùng có vết móp.
+
+3
+00:00:06,248 --> 00:00:11,491
+Nếu ảnh đóng gói nằm trong điện thoại của
+nhân viên, hai bên sẽ bắt đầu kiểm tra từ đâu?
+
+4
+00:00:11,491 --> 00:00:16,017
+Với ParcelLedger, cửa hàng theo dõi từng kiện theo việc cần làm.
+
+5
+00:00:16,017 --> 00:00:21,503
+Nhân viên nhìn vào danh sách để biết kiện nào
+đang chờ ảnh nhận, kiện nào cần kiểm tra biên bản.
+
+6
+00:00:21,503 --> 00:00:27,462
+Với đơn đèn gốm này, cửa hàng tạo hồ sơ,
+nhập mã kiện, tên hàng và tên người nhận.
+
+7
+00:00:27,462 --> 00:00:31,818
+Từ đây, ảnh và các lần xác nhận đều được lưu theo đúng đơn hàng.
+
+8
+00:00:31,818 --> 00:00:36,467
+Trước khi giao hàng, nhân viên chụp rõ mặt thùng và tải ảnh vào hồ sơ.
+
+9
+00:00:36,467 --> 00:00:40,945
+Khi bộ ảnh được khóa, cửa hàng có thể chia sẻ hồ sơ cho người nhận.
+
+10
+00:00:40,945 --> 00:00:45,981
+Khách mở liên kết, chụp lại cùng mặt thùng
+khi nhận hàng rồi thêm ảnh vào hồ sơ.
+
+11
+00:00:45,981 --> 00:00:50,399
+Ở kiện mẫu này, có thể nhìn thấy vết lõm bên dưới lớp băng keo.
+
+12
+00:00:50,399 --> 00:00:52,571
+Người nhận bấm đối chiếu.
+
+13
+00:00:52,571 --> 00:00:56,333
+Hệ thống tìm ảnh cùng mặt kiện trong bộ ảnh cửa hàng đã lưu.
+
+14
+00:00:56,333 --> 00:01:01,576
+Hai ảnh được đặt cạnh nhau để người xem so
+lại nhãn hàng, đường băng keo và mặt thùng.
+
+15
+00:01:01,576 --> 00:01:05,532
+Khi cần xem kỹ một chi tiết, hai bên có thể mở ảnh gốc.
+
+16
+00:01:05,532 --> 00:01:08,979
+Từ cặp ảnh đó, ứng dụng lập biên bản tiếng Việt.
+
+17
+00:01:08,979 --> 00:01:12,134
+Mỗi nhận xét dẫn về ảnh dùng để đối chiếu.
+
+18
+00:01:12,134 --> 00:01:14,452
+Hai bên kiểm tra nội dung.
+
+19
+00:01:14,452 --> 00:01:18,153
+Nếu cần sửa, hệ thống lưu thành một phiên bản mới.
+
+20
+00:01:18,153 --> 00:01:22,899
+Khi đồng ý với nội dung, người gửi và người nhận ký trên cùng một phiên bản.
+
+21
+00:01:22,899 --> 00:01:26,928
+Có thể ký bằng ngón tay trên điện thoại hoặc dùng chuột trên máy tính.
+
+22
+00:01:26,928 --> 00:01:30,241
+Đây là biên bản tải từ chính hồ sơ vừa ký.
+
+23
+00:01:30,241 --> 00:01:34,925
+Bản PDF có mã kiện, ảnh đối chiếu và chữ ký của hai bên.
+
+24
+00:01:34,925 --> 00:01:39,561
+Khi khách hỏi lại, cửa hàng chỉ cần tra mã đơn để mở đúng bản đã ký.
