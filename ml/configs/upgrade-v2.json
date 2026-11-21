@@ -1,0 +1,31 @@
+{
+  "version": "kienchung-ai-upgrade-v2",
+  "status": "CANDIDATE_NOT_TRAINED",
+  "dataset_policy": {
+    "parcel3d_source": "ayesha19765/parcel3d",
+    "parcel3d_version": 1,
+    "parcel3d_train_split": "official_train_only",
+    "parcel3d_expected_train_images": 9193,
+    "parcel3d_validation_roles": ["selection", "calibration"],
+    "parcel3d_test_images": 2200,
+    "parcel3d_rights": "ACADEMIC_ONLY_RESEARCH_BRANCH",
+    "visa_source": "amazon-science/spot-diff",
+    "visa_revision": "2a692ab575001cbde74d402d897a7286086c6199",
+    "visa_split": "split_csv/1cls.csv",
+    "visa_expected_train_images": 8659,
+    "visa_access": "OFFICIAL_ARCHIVE_HEAD_200_NOT_FULL_AUDITED",
+    "adnet": "HOLD_ACCESS_AND_OVERLAP_AUDIT",
+    "realiad_variety": "HOLD_ACCESS_AND_DATASET_TERMS",
+    "physical_images": 0
+  },
+  "candidates": [
+    {"id": "C1", "encoder": "dinov2_vitb14", "lora_blocks": 0, "width": 128},
+    {"id": "C2", "encoder": "dinov2_vitl14", "lora_blocks": 0, "width": 128},
+    {"id": "C3", "encoder": "dinov2_vitl14", "lora_blocks": 4, "lora_rank": 8, "width": 128}
+  ],
+  "profile": {"resolutions": [392, 518], "batch_pairs": 1, "warmup_steps": 2, "measured_steps": 4},
+  "selection_policy": "REAL_END_TO_END_QUALITY_WITH_COVERAGE_AND_SAFETY_CONSTRAINTS",
+  "production_promotion": "HOLD_REAL_DATA_BENCHMARK_AND_RIGHTS",
+  "human_review_required": true,
+  "assigns_responsibility": false
+}

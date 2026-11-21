@@ -1,0 +1,13 @@
+{
+  "experiment": "parcel-transformer-c3-v1",
+  "encoder": "dinov2_vitl14",
+  "lora_blocks": 4,
+  "width": 128,
+  "size": 392,
+  "seed": 26,
+  "epochs": 30,
+  "accumulation_steps": 8,
+  "head_lr": 0.0001,
+  "adapter_lr": 0.00001,
+  "max_seconds": 14400
+}
