@@ -1,0 +1,31 @@
+import {test,expect} from "@playwright/test";
+import {resolve} from "node:path";
+import {pathToFileURL} from "node:url";
+import {readFileSync} from "node:fs";
+
+test("independent annotation checks originals and exports normalized polygons",async({page},testInfo)=>{
+  const remote:string[]=[];
+  page.on("request",request=>{if(/^https?:/.test(request.url()))remote.push(request.url());});
+  await page.goto(pathToFileURL(resolve("assets/annotation/index.html")).href);
+  await page.getByLabel("Mã người gán nhãn",{exact:true}).fill("reviewer-ui");
+  await page.getByLabel("Manifest đã khóa",{exact:true}).setInputFiles(resolve(".local/annotation-fixture/manifest-v1.json"));
+  await page.getByLabel("Thư mục ảnh gốc",{exact:true}).setInputFiles(resolve(".local/annotation-fixture/photos"));
+  await expect(page.getByRole("status")).toContainText("Ảnh đã kiểm SHA-256");
+  await page.getByLabel("Hai ảnh có cùng vùng?",{exact:true}).selectOption("MATCH");
+  await page.getByLabel("Đủ chi tiết để đối chiếu?",{exact:true}).selectOption("SUFFICIENT");
+  await page.getByLabel("Thay đổi nhìn thấy",{exact:true}).selectOption("CHANGED");
+  const overlay=page.getByLabel("Vùng gán nhãn trên ảnh nhận",{exact:true});
+  await overlay.scrollIntoViewIfNeeded();
+  const rect=await overlay.boundingBox();expect(rect).toBeTruthy();
+  for(const [x,y] of [[.2,.2],[.6,.2],[.5,.6]])await overlay.click({position:{x:x*rect!.width,y:y*rect!.height}});
+  await page.getByRole("button",{name:"Lưu vùng đang vẽ",exact:true}).click();
+  const promise=page.waitForEvent("download");
+  await page.getByRole("button",{name:"Xuất lượt gán nhãn JSON",exact:true}).click();
+  const download=await promise;const content=JSON.parse(readFileSync((await download.path())!,"utf8"));
+  expect(content.annotator_id).toBe("reviewer-ui");
+  expect(content.annotations[0].change_polygons[0]).toHaveLength(3);
+  expect(content.annotations[0].change_polygons[0][0][0]).toBeCloseTo(.2,1);
+  expect(content.annotations[1].correspondence).toBe("UNKNOWN");
+  expect(remote).toEqual([]);
+  await page.screenshot({path:`artifacts/evaluation/${testInfo.project.name}-annotation.png`,fullPage:true});
+});

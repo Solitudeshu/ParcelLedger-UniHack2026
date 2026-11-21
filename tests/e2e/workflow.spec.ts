@@ -1,0 +1,127 @@
+import { mkdirSync } from "node:fs";
+import { test, expect } from "@playwright/test";
+
+test("real API: demo photographs to immutable report and review", async ({page, browser}, testInfo) => {
+  const errors: string[] = [];
+  page.on("pageerror", e => errors.push(e.message));
+  await page.goto("/");
+  await page.getByRole("button", {name: "Vào vai người gửi"}).click();
+  await expect(page.getByRole("heading", {name: "Hồ sơ kiện hàng."})).toBeVisible();
+  await page.screenshot({path: `artifacts/evaluation/${testInfo.project.name}-dashboard.png`, fullPage: true});
+  await page.getByRole("button", {name: "Kiện mẫu", exact: true}).click();
+  await page.getByRole("button", {name: "Trải nghiệm quy trình"}).click();
+  await expect(page.getByRole("heading", {name: "Đèn gốm · Shop Mộc"})).toBeVisible();
+  await expect(page.getByText("Đã tìm được vùng tương ứng để kiểm tra")).toBeVisible({timeout: 60_000});
+  await page.getByText("Cách đối chiếu và mô hình thử nghiệm", {exact:true}).click();
+  await page.getByText("Thử nghiệm khoanh vùng khác biệt", {exact: true}).click();
+  await expect(page.getByAltText("Ảnh nhận với lớp vùng thay đổi thử nghiệm")).toBeVisible();
+  const advisor = page.getByTestId("transformer-advisor");
+  await advisor.locator("summary").click();
+  await expect(page.getByAltText("Ảnh gửi do AI nâng cao chọn để đối chiếu")).toBeVisible();
+  await expect(page.getByAltText("Ảnh nhận với vùng gợi ý từ AI nâng cao")).toBeVisible();
+  // A stored automatic-gallery prediction must disappear under a manual selection.
+  await page.getByRole("combobox", {name: "Ảnh gửi để so sánh", exact: true}).selectOption({index: 1});
+  await expect(advisor).toHaveCount(0);
+  await page.getByRole("combobox", {name: "Ảnh gửi để so sánh", exact: true}).selectOption("");
+  await expect(advisor).toBeVisible();
+  await advisor.locator("summary").click();
+  await page.screenshot({path: `artifacts/evaluation/${testInfo.project.name}-evidence.png`, fullPage: true});
+  await page.getByRole("button", {name: "Xem biên bản"}).click();
+  await expect(page.getByRole("heading", {name: "Biên bản tình trạng kiện hàng"})).toBeVisible();
+  await expect(page.getByText("Có vùng cần kiểm tra", {exact: true}).first()).toBeVisible();
+  await page.getByRole("button", {name: "Chỉnh sửa nhận xét"}).click();
+  await page.getByLabel("Ghi chú của hai bên", {exact: true}).fill("Hai bên đã xem lại vùng được đánh dấu trên ảnh lúc nhận.");
+  await page.getByRole("button", {name: "Lưu phiên bản mới"}).click();
+  await expect(page.getByText("Phiên bản 2", {exact: true})).toBeVisible();
+  await page.getByRole("button", {name: "Xác nhận đã kiểm tra", exact: true}).click();
+  await expect(page.getByRole("heading", {name: "Bạn đã kiểm tra phiên bản này"})).toBeVisible();
+  await page.screenshot({path: `artifacts/evaluation/${testInfo.project.name}-report.png`, fullPage: true});
+  await expect(page.getByRole("button", {name: "Đã kiểm tra", exact: true})).toBeDisabled();
+  const width = await page.evaluate(() => ({scroll: document.documentElement.scrollWidth, viewport: innerWidth}));
+  expect(width.scroll).toBeLessThanOrEqual(width.viewport);
+  const reference = (await page.locator(".detail-heading .eyebrow").innerText()).split("/")[0].trim();
+  await page.getByRole("button", {name: "Ký biên bản", exact: true}).click();
+  await page.getByLabel("Họ tên người ký").fill("Người nhận mẫu");
+  await expect(page.getByRole("button", {name: "Ký phiên bản 2"})).toBeDisabled();
+  const pad = page.getByLabel("Ô vẽ chữ ký");
+  await pad.scrollIntoViewIfNeeded();
+  const box = (await pad.boundingBox())!;
+  const points = [[.12,.73],[.28,.22],[.20,.70],[.33,.42],[.30,.67],[.45,.48],[.42,.65],[.60,.46],[.52,.64],[.83,.56]];
+  await page.mouse.move(box.x + points[0][0]*box.width, box.y + points[0][1]*box.height);
+  await page.mouse.down();
+  for (const [x,y] of points.slice(1)) await page.mouse.move(box.x+x*box.width,box.y+y*box.height);
+  await page.mouse.up();
+  await page.getByRole("button", {name: "Ký phiên bản 2"}).click();
+  await expect(page.getByRole("img", {name: "Chữ ký tay"})).toBeVisible();
+
+  const shop = await browser.newPage();
+  try {
+    await shop.goto("http://127.0.0.1:3000/");
+    await shop.getByRole("button", {name: "Vào vai người gửi"}).click();
+    await shop.getByRole("button", {name: "Kiện mẫu", exact: true}).click();
+    await shop.getByRole("textbox", {name: "Tìm hồ sơ"}).fill(reference);
+    await shop.getByRole("button").filter({hasText: reference}).click();
+    await expect(shop.getByRole("img", {name: "Chữ ký tay"})).toBeVisible();
+    await shop.getByRole("button", {name: "Ký biên bản", exact: true}).click();
+    await shop.getByLabel("Ký bằng họ tên").check();
+    await shop.getByLabel("Họ tên người ký").fill("Đại diện shop mẫu");
+    await shop.getByRole("button", {name: "Ký phiên bản 2"}).click();
+    await expect(shop.getByText("Đại diện shop mẫu", {exact: true})).toBeVisible();
+    await expect(page.locator(".signature-parties").getByText("Đại diện shop mẫu")).toBeVisible({timeout: 20000});
+    const [download] = await Promise.all([shop.waitForEvent("download"), shop.getByRole("link", {name: "Tải biên bản PDF"}).click()]);
+    expect(await download.failure()).toBeNull();
+    mkdirSync("test-results/report-preview", {recursive:true});
+    await download.saveAs(`test-results/report-preview/${testInfo.project.name}-signed.pdf`);
+  } finally {await shop.close();}
+  await page.getByRole("button", {name: "Về danh sách hồ sơ", exact: true}).click();
+  await expect(page.getByRole("heading",{name:"Kiện hàng tôi nhận."})).toBeVisible();
+  await expect(page.locator(".queue-cards")).toHaveCount(0);
+  await page.getByRole("textbox",{name:"Tìm hồ sơ"}).fill(reference);
+  await expect(page.locator(".recipient-parcel").filter({hasText:reference})).toBeVisible();
+  await page.screenshot({path:`artifacts/evaluation/${testInfo.project.name}-recipient-inbox.png`, fullPage: true});
+  expect(errors).toEqual([]);
+});
+
+test("create a parcel through the form and persist after reload", async ({page}) => {
+  await page.goto("/");
+  await page.getByRole("button", {name: "Vào vai người gửi"}).click();
+  await page.getByRole("button", {name: "Tạo hồ sơ mới"}).click();
+  const mode = page.getByLabel("Loại giao nhận");
+  const reserve = page.getByLabel("Khoản ký quỹ thử nghiệm (kcTEST)");
+  await expect(mode).toHaveValue("standard");
+  await expect(reserve).toHaveCount(0);
+  await mode.selectOption("escrow");
+  await expect(reserve).toHaveValue("10");
+  await mode.selectOption("standard");
+  const reference = `E2E-${Date.now()}`;
+  await page.getByLabel("Mã kiện / mã đơn").fill(reference);
+  await page.getByLabel("Tên hàng", {exact: true}).fill("Bộ cốc gốm kiểm thử");
+  await page.getByLabel("Tên người nhận").fill("An kiểm thử");
+  await page.getByRole("button", {name: "Tạo và thêm ảnh"}).click();
+  await expect(page.getByRole("heading", {name: "Bộ cốc gốm kiểm thử"})).toBeVisible();
+  await expect(page.getByRole("heading", {name: "Ký quỹ của kiện hàng"})).toHaveCount(0);
+  await page.reload();
+  await expect(page.getByRole("heading", {name: "Hồ sơ kiện hàng."})).toBeVisible();
+  await page.getByRole("textbox", {name: "Tìm hồ sơ"}).fill("Bộ cốc gốm kiểm thử");
+  await expect(page.getByRole("button").filter({hasText: "Bộ cốc gốm kiểm thử"}).first()).toBeVisible();
+  await test.step("Returning to the filtered inbox never duplicates its panels", async () => {
+    const search = page.getByRole("textbox", {name: "Tìm hồ sơ"});
+    await search.fill(reference);
+    const row = page.getByRole("button").filter({hasText: reference});
+    const back = page.getByRole("button", {name: "Về danh sách hồ sơ", exact: true});
+    for (const navigate of ["app", "browser", "forward"] as const) {
+      if (navigate === "forward") await page.goForward();
+      else await row.click();
+      await expect(back).toBeVisible();
+      await expect(search).toHaveCount(0);
+      if (navigate === "browser") await page.goBack();
+      else await back.click();
+      await expect(search).toHaveCount(1);
+      await expect(search).toHaveValue(reference);
+      await expect(row).toBeVisible();
+      await expect(page.locator(".queue-cards")).toHaveCount(1);
+      await expect(page.getByText("Đang tải hồ sơ…", {exact: true})).toHaveCount(0);
+      await expect(back).toHaveCount(0);
+    }
+  });
+});

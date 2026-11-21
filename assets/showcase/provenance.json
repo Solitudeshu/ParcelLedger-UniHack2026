@@ -1,0 +1,4 @@
+{
+  "source": "OpenAI built-in ImageGen",
+  "purpose": "Synthetic judge walkthroughs for ParcelLedger. Three scenes, each with a dispatch overview, receipt overview and receipt detail. Excluded from model evaluation."
+}
