@@ -1,10 +1,20 @@
 # ParcelLedger
 
-ParcelLedger helps a shop and its customer check whether a dent was already visible when a parcel left the shop. Both parties compare dispatch and delivery photos, record what they can see, and sign the same version of a condition report. For shipments with a deposit, they can also approve a payout tied to that report on Avalanche Fuji.
+ParcelLedger helps online shops and their customers document the condition of a parcel before shipping and when it arrives. Both parties can compare the original photos, review visible changes, and sign a shared condition report. For orders with a deposit, they can also use that report to agree on a payout through an escrow contract on Avalanche Fuji.
 
-Built for **UniHack 2026**. [Pitch deck](output/pitch/ParcelLedger_UniHack2026.html) · [Sample signed report](output/pdf/Bien_ban_mau_co_chu_ky.pdf) · [Escrow on Avalanche Fuji](#escrow-on-avalanche-fuji) · [Run locally](#run-locally)
+[Pitch deck](output/pitch/ParcelLedger_UniHack2026.html) · [Sample signed report](output/pdf/Bien_ban_mau_co_chu_ky.pdf) · [Escrow on Avalanche Fuji](#escrow-on-avalanche-fuji) · [Run locally](#run-locally)
 
-To present the interactive slides, download the HTML deck and open it in a browser.
+## Built for UniHack 2026
+
+We built ParcelLedger for **Team1 Vietnam UniHack 2026**, a student hackathon in Vietnam focused on building applications on Avalanche. We chose a problem familiar to shops that pack and ship fragile goods themselves. When a customer reports damage, what evidence would help both sides reach a decision, and how could they check that a payment follows the decision they signed? [Competition website](https://team1vn.xyz/)
+
+The prototype brings two tools into the same claim. Computer vision helps people find comparable photos of a parcel taken at different times. For a funded shipment, Avalanche gives the sender and recipient a public record of the report they approved and the funds each can withdraw. A shop can also use the photo and reporting workflow on its own.
+
+## The delivery problem
+
+Consider a ceramics shop sending a lamp. On delivery, the customer sends the shop a close-up of a dented box. The packing team has several photos of the order, taken from different sides. Before anyone can discuss a refund, someone has to find the dispatch photo showing that same panel. A different camera angle, a shadow, or a crease already present at dispatch can change what the two people think they see.
+
+Even when they find the right images, the outcome can be hard to reconstruct from a chat. Which mark did the customer point out? Did both people see the latest note? What did they agree to do about it? ParcelLedger keeps the original photos, observations, and report versions under the shipment reference, so the next person handling the case can pick up where the last one left off.
 
 | At dispatch | At delivery |
 |:---:|:---:|
@@ -12,14 +22,24 @@ To present the interactive slides, download the HTML deck and open it in a brows
 
 *Generated photos from the ceramic lamp example. The lower-right panel is visibly dented in the delivery photo. The photos alone cannot establish when or how the dent occurred.*
 
+## Who uses ParcelLedger?
+
+| Participant | What they can do |
+|---|---|
+| **Packing staff** | Create a shipment, photograph the relevant faces of the parcel, and seal the dispatch photo set before handing it over. |
+| **Recipient** | Open the shop’s invitation, add an overview and a close-up of the area in question, and review the original photos alongside the shop’s observations. |
+| **Claims staff** | Find an order by reference, item, or recipient. Filter the inbox to see which shipments still need delivery photos, comparison, or confirmation. Reopen a case to review its history across shifts. |
+
 ## Walk through the product
 
 1. **Capture.** The sender opens a shipment, photographs the parcel, and shares an invitation. The recipient adds photos of the same face at delivery.
 2. **Compare.** The app matches views, aligns the images, and highlights regions worth inspecting. When the photos have too little overlap or detail, the workflow can ask for another view.
-3. **Sign the report.** Both parties review the observations and sign the same report version with a typed name or a drawn signature. They can download a readable PDF and the canonical JSON used to verify its contents.
+3. **Review and sign.** The parties can correct a draft observation or add context while reviewing the original images. An edit creates a new report version. Each party can sign the version they reviewed with a typed name or a drawn signature. Both can download a readable PDF and the canonical JSON used to verify its contents.
 4. **Settle an optional deposit.** For a funded shipment, the two wallets sign the terms, the report approval, and the allocation separately. Each party withdraws its share. A disputed case can go to a Safe with a two-of-three threshold.
 
 ## Escrow on Avalanche Fuji
+
+The original photos, names, and contact details stay in the application. The public chain records the report fingerprint, wallet approvals, and fund movements. Either party can inspect the settlement independently of the shop’s dashboard.
 
 Each funded shipment has its own escrow contract on the **Avalanche Fuji C-Chain (43113)**. The sender deposits kcTEST, and test AVAX covers network fees. Approving the condition report records which version both parties signed. The funds stay in escrow until the parties agree on an allocation or the Safe resolves a dispute.
 
@@ -71,6 +91,12 @@ docker compose -p kienchung-fuji -f infra/compose.yaml -f infra/compose.fuji-dem
 The demo uses SIFT features and RANSAC to align comparable views. It flags visible differences for the sender and recipient to inspect.
 
 The research matching policy selected the correct reference in **220 of 228** held-out synthetic queries, with **218** also meeting the alignment criterion. On staged TAMPAR photos of **20 boxes**, it selected the correct reference for **7 of 40** full views and **32 of 40** close-up crops. In a separate test where every candidate was the wrong box, it accepted one close-up match. These measurements describe reference selection under the stated conditions. Damage assessment and responsibility remain human decisions. [Synthetic evaluation](artifacts/evaluation/correspondence-final-test-v1.json) · [TAMPAR evaluation](artifacts/evaluation/tampar-matching-v1.json)
+
+## How we would evaluate it in a shop
+
+The first proposed pilot is a ceramics or home décor shop that packs its own orders and handles its own delivery claims. The practical question is whether recording dispatch photos pays off when a claim arrives. The shop would compare similar cases handled through its usual process and through ParcelLedger.
+
+At the packing desk, we would measure the extra time spent taking photos per shipment. During a claim, we would measure how long staff take to find a usable pair, how often they ask the customer for another view, and how long it takes both parties to sign. Those observations would tell us whether to improve capture guidance, image matching, or the report review screen first.
 
 ## Development checks
 
