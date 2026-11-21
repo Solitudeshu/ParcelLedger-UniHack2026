@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.woff2 binary
+*.ttf binary
+*.png binary
+*.webp binary
+*.jpg binary
+*.pdf binary
+*.mp4 binary
+artifacts/evaluation/fuji-evidence/* -text
